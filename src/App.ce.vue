@@ -7,7 +7,7 @@
     </div>
   <div class="col-span-3 ...">
     
-    
+    <province-view v-if="selectedProvince" :province="selectedProvince"></province-view>
 
   </div>
 
@@ -18,6 +18,7 @@
 <script>
 import Localizer from "./Localizer.js";
 import ProvincesSelector from './components/ProvincesSelector.vue';
+import ProvinceView from "./components/ProvinceView.vue";
 import Province from "./Models/Province.js"
 import payloadUrl from "./assets/payload.json?url";
 import LoadingIndicator from "./components/LoadingIndicator.vue";
@@ -33,7 +34,8 @@ export default {
   },
   components: {
     ProvincesSelector,
-    LoadingIndicator
+    LoadingIndicator,
+    ProvinceView
 },
 mounted() {
     fetch(payloadUrl)

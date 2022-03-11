@@ -8,9 +8,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.2.25"
+    "chart.js": "^3.7.1",
+    "remarkable": "^2.0.1",
+    "vue": "^3.2.25",
+    "vue-chart-3": "^3.1.4"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.2",
     "@vitejs/plugin-vue": "^2.2.0",
     "autoprefixer": "^10.4.2",
     "postcss": "^8.4.6",
