@@ -1,22 +1,53 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <ToolSplash />
+<LoadingIndicator v-if="!payload"></LoadingIndicator>  
+  <aside v-else class="grid grid-cols-4 gap-4">
+
+    <div>
+      <provinces-selector @pick="setSelectedProvince"></provinces-selector>
+    </div>
+  <div class="col-span-3 ...">
+    
+    
+
+  </div>
+
+  </aside>
+
 </template>
 
 <script>
-import ToolSplash from './components/ToolSplash.vue'
+import Localizer from "./Localizer.js";
+import ProvincesSelector from './components/ProvincesSelector.vue';
+import Province from "./Models/Province.js"
+import payloadUrl from "./assets/payload.json?url";
+import LoadingIndicator from "./components/LoadingIndicator.vue";
 
-const language = document.documentElement.lang;
 
 export default {
-  data() {
+   data() {
     return {
-      language: language,
+      strings: new Localizer(),
+      payload: null,
+      selectedProvince: null
     };
   },
   components: {
-    ToolSplash,
-    
+    ProvincesSelector,
+    LoadingIndicator
+},
+mounted() {
+    fetch(payloadUrl)
+      .then((r) => r.json())
+      .then((j) => {
+        j.provinces = j.provinces.map((province) => new Province(province));
+        this.payload = j;
+        if (!this.selectedProvince) this.setSelectedProvince(j.provinces[0]);
+      });
+  },
+  methods:  {
+    setSelectedProvince(province) {
+      this.selectedProvince = province;
+    }
   }
 };
 </script>

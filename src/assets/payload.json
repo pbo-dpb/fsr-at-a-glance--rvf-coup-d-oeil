@@ -1,0 +1,41 @@
+{
+    "provinces": [
+        {
+            "name_en": "Alberta",
+            "name_fr": "Alberta",
+            "bullets": [
+                {
+                    "content_en": "Alberta is projected to have the highest population rowth rate in Canada, and a younger population than most other provinces over the long term.",
+                    "content_fr": "À long terme, l'Alberta devrait avoir le taux de croissance démographique le plus élevé au Canada ainsi qu'une population plus jeune que la plupart des autres provinces"
+                },
+                {
+                    "content_en": "Favourable demographic trends combined with higher-than-average labour productivity growth contribute to the highest projected provincial real GDP growth rate in Canada. Our assumptions for provincial labour productivity are based on historical trends from 1982 to 2019.",
+                    "content_fr": "Les tendances démographiques favorables, combinées à une croissance de la productivité de la main-d'œuvre supérieure à la moyenne, contribuent au plus haut taux de croissance projeté du PIB provincial réel au Canada. Nos hypothèses concernant la productivité de la main-d'œuvre provinciale se fondent sur les tendances historiques de 1982 à 2019."
+                },
+                {
+                    "content_en": "Except for British Columbia, Alberta holds less debt than all other provinces (as a share of the economy). Furthermore, PBO projects that Alberta will maintain the most favourable differential between long-run effective interest rates and economic growth of any province. These factors both positively contribute to Alberta's sustainability prospects.",
+                    "content_fr": "L'Alberta est la moins endettée de toutes les provinces (en proportion de l'économie), à l'exception de la Colombie-Britannique. De plus, le directeur parlementaire du budget (DPB) prévoit que l'Alberta maintiendra l'écart le plus favorable entre les taux d'intérêt en vigueur à long terme et la croissance économique de toutes les provinces. Ces deux facteurs contribuent à embellir les perspectives de viabilité pour l'Alberta."
+                },
+                {
+                    "content_en": "Alberta's long-run fiscal outlook begins unsustainably - current spending far exceeds current revenues. Thus, despite relatively modest demographic pressures and provincial plans to improve the medium-term fiscal position, Alberta's program spending exceeds revenues throughout our entire projection, leading to rising debt (as a share of the economy).",
+                    "content_fr": "Les perspectives budgétaires à long terme de l'Alberta commencent par être non viables - les dépenses actuelles dépassant largement les revenus. Ainsi, malgré des pressions démographiques relativement modestes et les plans provinciaux visant à améliorer la situation financière à moyen terme, les dépenses de programmes de l'Alberta dépassent les revenus sur toute la période de projection, entraînant une augmentation de la dette (en proportion de l'économie)."
+                },
+                {
+                    "content_en": "Alberta's program spending and own-source revenues (as a share of the economy) are lowest of any province.",
+                    "content_fr": "Les dépenses de programmes et les revenus autonomes de l'Alberta (en proportion de l'économie) sont les plus faibles de toutes les provinces."
+                },
+                {
+                    "content_en": "**Current fiscal policy is not sustainable over the long term.** Permanent tax increases or spending reductions amounting to 3.1 per cent of GDP ($9.5 billion in current dollars, growing in line with GDP thereafter) would be required to stabilize government net debt (as a share of the economy) in the long term.",
+                    "content_fr": "**La politique budgétaire actuelle n'est pas viable à long terme.** Des hausses d'impôts ou des réductions de dépenses permanentes représentant 3,1 % du PIB (9,5 milliards de dollars, en dollars courants, augmentant en fonction du PIB par la suite) seraient nécessaires pour stabiliser la dette nette du gouvernement à long terme (en proportion de l'économie)."
+                }
+            ]
+        },
+        {
+            "name_en": "British Columbia",
+            "name_fr": "Colombie-Britannique",
+            "bullets": [
+               
+            ]
+        }
+    ]
+}
