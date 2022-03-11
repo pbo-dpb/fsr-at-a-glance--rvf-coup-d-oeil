@@ -6,6 +6,21 @@
     "intro": {
         "en": null,
         "fr": null
-    }
-   
+    },
+    "program_spending": {
+        "en": "Program spending & revenue",
+        "fr": "Dépenses de programmes & revenus"
+    },
+   "net_debt": {
+       "en": "Net debt",
+       "fr": "Dette nette"
+   },
+   "percentage_of_gdp_axis_label": {
+       "en": "% of GDP",
+       "fr": "% du PIB"
+   },
+   "percentage_of_tooltip_label": {
+    "en": ":percentage of GDP",
+    "fr": ":percentage du PIB"
+}
 }
