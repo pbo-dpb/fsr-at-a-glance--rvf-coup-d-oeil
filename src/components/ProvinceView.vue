@@ -4,6 +4,9 @@
 <div class="col-span-2 pr-4">
 <h1 class="leading-none font-thin mb-4 ">{{ province.name }}</h1>
 <ProvinceViewBullets :province="province"></ProvinceViewBullets>
+<ProvinceViewIndicators :province="province"></ProvinceViewIndicators>
+
+
 </div>
 <div class="pl-4 flex flex-col divide-y divide-gray-300">
 <figure class="pb-4 ">
@@ -21,6 +24,7 @@
 import Province from "../Models/Province";
 import ProvinceViewBullets from "./ProvinceViewBullets.vue";
 import ProvinceViewNetDebt from "./ProvinceViewNetDebt.vue";
+import ProvinceViewIndicators from "./ProvinceViewIndicators.vue"
 import ProvinceViewProgramSpendingRevenue from "./ProvinceViewProgramSpendingRevenue.vue";
 
 export default {
@@ -30,6 +34,6 @@ export default {
             required: true
         }
     },
-    components: { ProvinceViewBullets, ProvinceViewNetDebt, ProvinceViewProgramSpendingRevenue }
+    components: { ProvinceViewBullets, ProvinceViewNetDebt, ProvinceViewProgramSpendingRevenue, ProvinceViewIndicators }
 }
 </script>

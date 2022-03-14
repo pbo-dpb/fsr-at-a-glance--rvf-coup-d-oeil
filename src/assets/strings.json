@@ -22,5 +22,66 @@
    "percentage_of_tooltip_label": {
     "en": ":percentage of GDP",
     "fr": ":percentage du PIB"
-}
+    },
+    "indicators_group_demographics": {
+        "en": "Demographics (%)",
+        "fr": "Démographie (%)"
+    },
+    "indicators_group_economics": {
+        "en": "Economics (%)",
+        "fr": "Économie (%)"
+    },
+    "indicators_group_fiscal": {
+        "en": "Fiscal (% of GDP)",
+        "fr": "Finances (% du PIB)"
+    },
+    "indicators_keys_population_growth": {
+        "en": "Population growth",
+        "fr": "Croissance démographique"
+    },
+    "indicators_keys_senior_dependency_ratio": {
+        "en": "Senior dependency ratio",
+        "fr": "Ratio de dépendance des personnes âgées"
+    },
+    "indicators_keys_real_gdp_growth": {
+        "en": "Real GDP growth",
+        "fr": "Croissance du PIB réel"
+    },
+    "indicators_keys_employment_growth": {
+        "en": "Employment growth",
+        "fr": "Croissance de l'emploi"
+    },
+    "indicators_keys_labour_productivity_growth": {
+        "en": "Labour productivity growth",
+        "fr": "Croissance de la productivité de la main-d'œuvre"
+    },
+    "indicators_keys_nominal_gdp_growth": {
+        "en": "Labour productivity growth",
+        "fr": "Croissance de la productivité de la main-d'œuvre"
+    },
+    "indicators_keys_effective_interest_rate": {
+        "en": "Effective interest rate",
+        "fr": "Taux d'intérêt effectif"
+    },
+    "indicators_keys_revenue": {
+        "en": "Revenue",
+        "fr": "Revenus"
+    },
+    "indicators_keys_program_spending": {
+        "en": "Program spending",
+        "fr": "Dépenses de programmes"
+    },
+    "indicators_keys_primary_balance": {
+        "en": "Primary balance",
+        "fr": "Solde primaire"
+    },
+    "indicators_keys_debt_interest_charges": {
+        "en": "Debt interest charges",
+        "fr": "Frais d'intérêts sur la dette"
+    },
+    "indicators_keys_net_debt": {
+        "en": "Net debt",
+        "fr": "Dette nette"
+    }
+
 }
