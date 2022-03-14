@@ -7,6 +7,10 @@
         "en": null,
         "fr": null
     },
+    "expand_toggle_prompt": {
+        "en": "Select province/territories",
+        "fr": "Sélectionner province/territoires"
+    },
     "program_spending": {
         "en": "Program spending & revenue",
         "fr": "Dépenses de programmes & revenus"

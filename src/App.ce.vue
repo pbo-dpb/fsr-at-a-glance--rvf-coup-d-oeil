@@ -1,11 +1,11 @@
 <template>
 <LoadingIndicator v-if="!payload"></LoadingIndicator>  
-  <aside v-else class="grid grid-cols-4 gap-4">
+  <aside v-else class="md:grid grid-cols-4 gap-4">
 
     <div>
       <provinces-selector @pick="setSelectedProvince"></provinces-selector>
     </div>
-  <div class="col-span-3 ...">
+  <div class="col-span-3 pt-4 md:pt-0">
     
     <province-view v-if="selectedProvince" :province="selectedProvince"></province-view>
 
