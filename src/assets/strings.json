@@ -4,8 +4,12 @@
         "fr": "En un coup d'oeil"
     },
     "intro": {
-        "en": null,
-        "fr": null
+        "en": "The OPBO has prepared fact sheets for the provinces and territories. Yada yada yada lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "fr": "Le BDPB a préparé des fiches d'informations pour les provinces et les territoires. Yada yada yada lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    },
+    "splash_cta": {
+        "en": "Select a province or the territories to view the fact sheet.",
+        "fr": "Choisissez une province ou les territoires pour afficher la fiche informative."
     },
     "expand_toggle_prompt": {
         "en": "Select province/territories",

@@ -8,7 +8,7 @@
   <div class="col-span-3 pt-4 lg:pt-0">
     
     <province-view v-if="selectedProvince" :province="selectedProvince"></province-view>
-
+    <SplashScreen v-else></SplashScreen>
   </div>
 
   </aside>
@@ -22,6 +22,7 @@ import ProvinceView from "./components/ProvinceView.vue";
 import Province from "./Models/Province.js"
 import payloadUrl from "./assets/payload.json?url";
 import LoadingIndicator from "./components/LoadingIndicator.vue";
+import SplashScreen from "./components/SplashScreen.vue";
 
 
 export default {
@@ -35,7 +36,8 @@ export default {
   components: {
     ProvincesSelector,
     LoadingIndicator,
-    ProvinceView
+    ProvinceView,
+    SplashScreen
 },
 mounted() {
     fetch(payloadUrl)
@@ -43,7 +45,7 @@ mounted() {
       .then((j) => {
         j.provinces = j.provinces.map((province) => new Province(province));
         this.payload = j;
-        if (!this.selectedProvince) this.setSelectedProvince(j.provinces[0]);
+        //if (!this.selectedProvince) this.setSelectedProvince(j.provinces[0]);
       });
   },
   methods:  {
