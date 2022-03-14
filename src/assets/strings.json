@@ -23,6 +23,14 @@
     "en": ":percentage of GDP",
     "fr": ":percentage du PIB"
     },
+    "indicators_comparison_toggle": {
+        "en": "Display national average",
+        "fr": "Afficher la moyenne nationale"
+    },
+    "indicator_comparison_label": {
+        "en": "vs. national average",
+        "fr": "Par rapport à la moyenne nationale"
+    },
     "indicators_group_demographics": {
         "en": "Demographics (%)",
         "fr": "Démographie (%)"

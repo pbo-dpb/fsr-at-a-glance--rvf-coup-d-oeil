@@ -1,11 +1,9 @@
 <template>
-
-<div class="grid grid-cols-3 divide-x divide-gray-300">
-<div class="col-span-2 pr-4">
 <h1 class="leading-none font-thin mb-4 ">{{ province.name }}</h1>
-<ProvinceViewBullets :province="province"></ProvinceViewBullets>
-<ProvinceViewIndicators :province="province"></ProvinceViewIndicators>
 
+<div class="grid grid-cols-3 divide-x divide-gray-300 border-b border-gray-300 pb-4 mb-4">
+<div class="col-span-2 pr-4">
+<ProvinceViewBullets :province="province"></ProvinceViewBullets>
 
 </div>
 <div class="pl-4 flex flex-col divide-y divide-gray-300">
@@ -19,6 +17,9 @@
 </figure>
 </div>
 </div>
+
+<ProvinceViewIndicators :province="province"></ProvinceViewIndicators>
+
 </template>
 <script>
 import Province from "../Models/Province";

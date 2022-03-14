@@ -4,8 +4,12 @@
         {{ $root.strings[`indicators_keys_${indicatorKey}`] }}
     </div>
 
-    <div class="text-center" v-for="column in indicatorValues">
-        {{ column }}
+    <div class="text-center" v-for="column in indicatorProvincesValues">
+        {{ new Intl.NumberFormat(`${this.$root.strings.language}-CA`, ).format(column) }}
+    </div>
+
+    <div v-for="column in indicatorValues" v-if="displayComparisonToNationalAverage" class="text-center" >
+        {{ new Intl.NumberFormat(`${this.$root.strings.language}-CA`, ).format(column) }}
     </div>
 
 </template>
@@ -26,6 +30,9 @@ export default {
             type: Object,
             required: true
         },
+        displayComparisonToNationalAverage: {
+            type: Boolean
+        }
     },
     computed: {
         dataColumnLabels() {
@@ -36,6 +43,9 @@ export default {
         },
         columnCount() {
             return 2 + this.dataColumnCount;
+        },
+        indicatorProvincesValues() {
+            return this.province.indicators[this.indicatorKey];
         }
     }
 }

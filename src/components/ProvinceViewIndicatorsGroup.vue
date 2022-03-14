@@ -1,6 +1,14 @@
 <template>
-<figure class="grid  gap-4" :class="`grid-cols-${columnCount}`">
+<figure class="grid gap-4" :class="columnClass">
     
+
+    <div class="text-sm font-semibold col-start-3 col-span-3 text-center border-b border-gray-300" v-if="displayComparisonToNationalAverage">
+    {{ province.name }}
+    </div>
+
+    <div class="text-sm font-semibold col-span-3 text-center border-b border-red-800" v-if="displayComparisonToNationalAverage">
+    {{ $root.strings.indicator_comparison_label }}
+    </div>
     
     <div class="col-span-2 font-semibold">
         {{ $root.strings[`indicators_group_${group}`] }}
@@ -10,7 +18,12 @@
         {{ column }}
     </div>
 
-    <ProvinceViewIndicatorsGroupIndicator v-for="(indVals, indKey) in $root.payload.indicators[this.group]" :indicator-values="indVals" :indicator-key="indKey" :province="province"></ProvinceViewIndicatorsGroupIndicator>
+    <div class="font-semibold text-center" v-if="displayComparisonToNationalAverage" v-for="column in dataColumnLabels">
+        {{ column }}
+    </div>
+
+    <ProvinceViewIndicatorsGroupIndicator v-for="(indVals, indKey) in $root.payload.indicators[this.group]" :indicator-values="indVals" :indicator-key="indKey" :province="province" :display-comparison-to-national-average="displayComparisonToNationalAverage"></ProvinceViewIndicatorsGroupIndicator>
+
 
 </figure>
 </template>
@@ -27,6 +40,9 @@ export default {
         group: {
             type: String,
             required: true
+        },
+        displayComparisonToNationalAverage: {
+            type: Boolean
         }
     },
     computed: {
@@ -37,7 +53,15 @@ export default {
             return this.dataColumnLabels.length;
         },
         columnCount() {
-            return 2 + this.dataColumnCount;
+            return 2 + this.dataColumnCount + (this.displayComparisonToNationalAverage ? this.dataColumnCount : 0);
+        },
+        columnClass() {
+            switch (this.columnCount) {
+                case 5:
+                    return `grid-cols-5`
+                case 8:
+                    return `grid-cols-8`
+            }
         }
     },
     components: { ProvinceViewIndicatorsGroupIndicator }
