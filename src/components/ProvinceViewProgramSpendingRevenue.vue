@@ -56,7 +56,7 @@ return {
       
       chartData () {
           return {
-        labels: this.province.revenue.labels,
+        labels: this.$root.payload.labels,
         datasets: [
          {
             data: this.province.revenue.values,
@@ -64,7 +64,7 @@ return {
             cubicInterpolationMode: 'monotone',
             segment: {
             borderDash: ctx => {
-              if (ctx.p0.parsed.x > this.province.revenue.labels.indexOf(this.$root.payload.year)) return [6,6];
+              if (ctx.p0.parsed.x > this.$root.payload.labels.indexOf(this.$root.payload.year)) return [6,6];
               return undefined; 
             },
         },
@@ -75,7 +75,7 @@ return {
             cubicInterpolationMode: 'monotone',
             segment: {
             borderDash: ctx => {
-              if (ctx.p0.parsed.x > this.province.revenue.labels.indexOf(this.$root.payload.year)) return [6,6];
+              if (ctx.p0.parsed.x > this.$root.payload.labels.indexOf(this.$root.payload.year)) return [6,6];
               return undefined; 
             },
         },

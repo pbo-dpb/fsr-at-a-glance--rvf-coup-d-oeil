@@ -52,13 +52,13 @@ return {
     }
       },
       backgroundColors() {
-          return this.province.net_debt.labels.map(label=>{
+          return this.$root.payload.labels.map(label=>{
               return label <= this.$root.payload.year ? '#0072AF' : '#19AEFF';
           });
       },
       chartData () {
           return {
-        labels: this.province.net_debt.labels,
+        labels: this.$root.payload.labels,
         datasets: [
          {
             data: this.province.net_debt.values,
