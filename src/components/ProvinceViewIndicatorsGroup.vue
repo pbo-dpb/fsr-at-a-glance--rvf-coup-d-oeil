@@ -2,23 +2,23 @@
 <figure class="grid gap-4" :class="columnClass">
     
 
-    <div class="text-sm font-semibold col-start-3 col-span-3 text-center border-b border-gray-300" v-if="displayComparisonToNationalAverage">
+    <div class="hidden lg:block text-sm font-semibold col-start-3 col-span-3 text-center border-b border-gray-300" v-if="displayComparisonToNationalAverage">
     {{ province.name }}
     </div>
 
-    <div class="text-sm font-semibold col-span-3 text-center border-b border-red-800" v-if="displayComparisonToNationalAverage">
+    <div class="hidden lg:block text-sm font-semibold col-span-3 text-center border-b border-red-800" v-if="displayComparisonToNationalAverage">
     {{ $root.strings.indicator_comparison_label }}
     </div>
     
-    <div class="col-span-2 font-semibold">
+    <div class="col-span-3 lg:col-span-2 font-semibold">
         {{ $root.strings[`indicators_group_${group}`] }}
     </div>
 
-    <div class="font-semibold text-center" v-for="column in dataColumnLabels">
+    <div class="hidden lg:block font-semibold text-center" v-for="column in dataColumnLabels">
         {{ column }}
     </div>
 
-    <div class="font-semibold text-center" v-if="displayComparisonToNationalAverage" v-for="column in dataColumnLabels">
+    <div class="hidden lg:block font-semibold text-center" v-if="displayComparisonToNationalAverage" v-for="column in dataColumnLabels">
         {{ column }}
     </div>
 
@@ -58,9 +58,9 @@ export default {
         columnClass() {
             switch (this.columnCount) {
                 case 5:
-                    return `grid-cols-5`
+                    return ['grid-cols-3', `lg:grid-cols-5`]
                 case 8:
-                    return `grid-cols-8`
+                    return ['grid-cols-3', `lg:grid-cols-8`]
             }
         }
     },

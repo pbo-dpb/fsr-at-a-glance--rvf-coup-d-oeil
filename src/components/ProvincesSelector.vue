@@ -1,5 +1,5 @@
 <template>
-<nav class="md:border-r md:border-gray-300 md:pr-2 md:flex flex-col gap-2">
+<nav class="lg:border-r lg:border-gray-300 lg:pr-2 lg:flex flex-col gap-2">
 <div class="flex flex-row items-center gap-2 uppercase tracking-wide font-semibold justify-between">
   {{ $root.strings.title }}
 
