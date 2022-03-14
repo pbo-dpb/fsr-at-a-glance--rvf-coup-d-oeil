@@ -178,8 +178,104 @@
             "name_en": "British Columbia",
             "name_fr": "Colombie-Britannique",
             "bullets": [
-               
-            ]
+                {
+                    "content_en": "Alberta is projected to have the highest population rowth rate in Canada, and a younger population than most other provinces over the long term.",
+                    "content_fr": "À long terme, l'Alberta devrait avoir le taux de croissance démographique le plus élevé au Canada ainsi qu'une population plus jeune que la plupart des autres provinces"
+                },
+                {
+                    "content_en": "Favourable demographic trends combined with higher-than-average labour productivity growth contribute to the highest projected provincial real GDP growth rate in Canada. Our assumptions for provincial labour productivity are based on historical trends from 1982 to 2019.",
+                    "content_fr": "Les tendances démographiques favorables, combinées à une croissance de la productivité de la main-d'œuvre supérieure à la moyenne, contribuent au plus haut taux de croissance projeté du PIB provincial réel au Canada. Nos hypothèses concernant la productivité de la main-d'œuvre provinciale se fondent sur les tendances historiques de 1982 à 2019."
+                },
+                {
+                    "content_en": "Except for British Columbia, Alberta holds less debt than all other provinces (as a share of the economy). Furthermore, PBO projects that Alberta will maintain the most favourable differential between long-run effective interest rates and economic growth of any province. These factors both positively contribute to Alberta's sustainability prospects.",
+                    "content_fr": "L'Alberta est la moins endettée de toutes les provinces (en proportion de l'économie), à l'exception de la Colombie-Britannique. De plus, le directeur parlementaire du budget (DPB) prévoit que l'Alberta maintiendra l'écart le plus favorable entre les taux d'intérêt en vigueur à long terme et la croissance économique de toutes les provinces. Ces deux facteurs contribuent à embellir les perspectives de viabilité pour l'Alberta."
+                },
+                {
+                    "content_en": "Alberta's long-run fiscal outlook begins unsustainably - current spending far exceeds current revenues. Thus, despite relatively modest demographic pressures and provincial plans to improve the medium-term fiscal position, Alberta's program spending exceeds revenues throughout our entire projection, leading to rising debt (as a share of the economy).",
+                    "content_fr": "Les perspectives budgétaires à long terme de l'Alberta commencent par être non viables - les dépenses actuelles dépassant largement les revenus. Ainsi, malgré des pressions démographiques relativement modestes et les plans provinciaux visant à améliorer la situation financière à moyen terme, les dépenses de programmes de l'Alberta dépassent les revenus sur toute la période de projection, entraînant une augmentation de la dette (en proportion de l'économie)."
+                },
+                {
+                    "content_en": "Alberta's program spending and own-source revenues (as a share of the economy) are lowest of any province.",
+                    "content_fr": "Les dépenses de programmes et les revenus autonomes de l'Alberta (en proportion de l'économie) sont les plus faibles de toutes les provinces."
+                },
+                {
+                    "content_en": "**Current fiscal policy is not sustainable over the long term.** Permanent tax increases or spending reductions amounting to 3.1 per cent of GDP ($9.5 billion in current dollars, growing in line with GDP thereafter) would be required to stabilize government net debt (as a share of the economy) in the long term.",
+                    "content_fr": "**La politique budgétaire actuelle n'est pas viable à long terme.** Des hausses d'impôts ou des réductions de dépenses permanentes représentant 3,1 % du PIB (9,5 milliards de dollars, en dollars courants, augmentant en fonction du PIB par la suite) seraient nécessaires pour stabiliser la dette nette du gouvernement à long terme (en proportion de l'économie)."
+                }
+            ],
+            "net_debt": {
+                "values": [-18.75892824, -26.24369969,-22.56564172,-28.60480551,-11.73905951,-4.15384839,3.49749542,14.32126576,17.35626298,21.475382,19.99989434,21.05961164,23.31081261,21.70511176,20.95596209,18.56242844,17.45611092,16.99383985,17.94681001,21.75692755,23.19062836,25.79429254,26.862343,25.76742137,27.59795238,26.53964624,25.58474675,24.16864855,24.15344788,25.86713532,30.13105448,30.13952725,30.61384531,30.65744525,30.50643029,30.29451225,30.19412781,30.18182244,30.24541383,30.37503793,30.56546761,30.81326651,31.11143176,31.44938402,31.83022563,32.25155121,32.71691431,33.21957582,33.75856619,34.33628658,34.95769102,35.61968749,36.31420945,37.04014573,37.79706856,38.58409438,39.39566585,40.22088035,41.05900377,41.91317878,42.78062178,43.653396,44.51994429,45.38072281,46.23688975,47.09071061,47.93856335,48.77447114,49.60115746,50.42648048,51.25303134,52.08277336,52.91495595,53.7525965,54.6007586,55.46434892,56.34463216,57.24242314,58.16000317,59.10025271,60.06563194,61.05498333,62.06562416,63.09758152,64.1510983,65.22618909,66.32097769,67.43084387,68.55552093,69.69434244,70.84547668,72.00690134,73.1754971,74.35139725,75.5355248,76.72599047,77.92155941,79.12247431,80.33008121,81.54588038,82.76937562,84.00110857,85.24329524,86.49837481,87.76730129,89.05014781]
+            },
+            "revenue": {
+                "values": [14.7, 13.5,19.2,19.8,11.2,18.0,17.7,18.7,19.4,19.1,19.4,20.4,20.1,17.3,16.5,17.1,17.0,16.9,16.9,16.9,16.9,16.9,16.9,16.9,16.9,16.9,16.9,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8,16.8]
+            },
+            "program_spending": {
+                "values": [37.2,26,24.0,23.4,14.3,13.9,12.8,19.7,23.0,21.7,21.4,21.7,25.6,22.6,20.0,18.7,18.7,18.8,18.8,18.9,18.9,18.9,19.0,19.0,19.1,19.1,19.2,19.2,19.2,19.3,19.3,19.3,19.4,19.4,19.4,19.5,19.5,19.5,19.5,19.6,19.6,19.6,19.6,19.6,19.6,19.7,19.7,19.7,19.7,19.7,19.7,19.8,19.8,19.8,19.8,19.8,19.9,19.9,19.9,20.0,20.0,20.0,20.0,20.1,20.1,20.1,20.1,20.2,20.2,20.2,20.2,20.2,20.2,20.2,20.3,20.3,20.3,20.3,20.3,20.3,20.3,20.3,20.4,20.4,20.4,20.4,20.4,20.4]
+            },
+            "indicators": {
+                "population_growth": {
+                    "2025": 1.8,
+                    "2050": 1.4,
+                    "2075": 1.2
+                },
+                "senior_dependency_ratio": {
+                    "2025": 24.1,
+                    "2050": 32.0,
+                    "2075": 37.8
+                },
+                "real_gdp_growth": {
+                    "2025": 2.5,
+                    "2050": 2.4,
+                    "2075": 2.3
+                },
+                "employment_growth": {
+                    "2025": 1.9,
+                    "2050": 1.2,
+                    "2075": 1.1
+                },
+                "labour_productivity_growth": {
+                    "2025": 0.8,
+                    "2050": 1.2,
+                    "2075": 1.1
+                },
+                "nominal_gdp_growth": {
+                    "2025": 4.7,
+                    "2050": 4.4,
+                    "2075": 4.3
+                },
+                "effective_interest_rate": {
+                    "2025": 2.8,
+                    "2050": 3.7,
+                    "2075": 3.7
+                },
+                "revenue": {
+                    "2025": 16.9,
+                    "2050": 16.8,
+                    "2075": 16.8
+                },
+                "program_spending": {
+                    "2025": 18.8,
+                    "2050": 19.6,
+                    "2075": 20.2
+                },
+                "primary_balance": {
+                    "2025": -1.9,
+                    "2050": -2.8,
+                    "2075": -3.4
+                },
+                "debt_interest_charges": {
+                    "2025": 1.2,
+                    "2050": 3.2,
+                    "2075": 5.1
+                },
+                "net_debt": {
+                    "2025": 28.4,
+                    "2050": 85.5,
+                    "2075": 145.6
+                }
+            }
+            
+
         }
     ]
 }

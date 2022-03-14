@@ -1,5 +1,5 @@
 <template>
-<LoadingIndicator v-if="!payload"></LoadingIndicator>  
+<LoadingIndicator v-if="!payload" class="h-8 w-8"></LoadingIndicator>  
   <aside v-else class="lg:grid grid-cols-4 gap-4">
 
     <div>
