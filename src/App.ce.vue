@@ -39,13 +39,22 @@ export default {
     ProvinceView,
     SplashScreen
 },
+props: {
+  toolRoot: String,
+},
 mounted() {
-    fetch(payloadUrl)
+  let fetchUrl;
+    if (this.toolRoot) {
+      fetchUrl = new URL(payloadUrl, this.toolRoot);
+    } else {
+      fetchUrl = payloadUrl;
+    }
+
+fetch(fetchUrl)
       .then((r) => r.json())
       .then((j) => {
         j.provinces = j.provinces.map((province) => new Province(province));
         this.payload = j;
-        //if (!this.selectedProvince) this.setSelectedProvince(j.provinces[0]);
       });
   },
   methods:  {
