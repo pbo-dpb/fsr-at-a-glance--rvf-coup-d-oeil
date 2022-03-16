@@ -40,12 +40,12 @@ export default {
     SplashScreen
 },
 props: {
-  toolRoot: String,
+  publicPath: String,
 },
 mounted() {
   let fetchUrl;
-    if (this.toolRoot) {
-      fetchUrl = new URL(payloadUrl, this.toolRoot);
+    if (this.publicPath) {
+      fetchUrl = new URL(payloadUrl, this.publicPath);
     } else {
       fetchUrl = payloadUrl;
     }
