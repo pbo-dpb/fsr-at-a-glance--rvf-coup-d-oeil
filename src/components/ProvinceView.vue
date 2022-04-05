@@ -1,17 +1,18 @@
 <template>
-<h1 class="leading-none font-thin mb-4 ">{{ province.name }}</h1>
+<h1 class="leading-none font-thin ">{{ province.name }}</h1>
 
-<div class="grid grid-cols-1 lg:grid-cols-3 lg:divide-x divide-gray-300 lg:border-b border-gray-300 pb-4 mb-4">
+<div class="grid grid-cols-1  pb-4 ">
 <div class="col-span-2 lg:pr-4">
 <ProvinceViewBullets :province="province"></ProvinceViewBullets>
 
 </div>
-<div class="lg:pl-4 flex flex-col lg:divide-y divide-gray-300">
-<figure class="pb-4 ">
+
+<div class="flex flex-col gap-4">
+<figure>
     <h2 class="leading-none font-thin mb-4">{{ $root.strings.program_spending }}</h2>
 <ProvinceViewProgramSpendingRevenue :province="province"></ProvinceViewProgramSpendingRevenue>
 </figure>
-<figure class="pt-4">
+<figure>
     <h2 class="leading-none font-thin mb-4">{{ $root.strings.net_debt }}</h2>
 <ProvinceViewNetDebt :province="province"></ProvinceViewNetDebt>
 </figure>

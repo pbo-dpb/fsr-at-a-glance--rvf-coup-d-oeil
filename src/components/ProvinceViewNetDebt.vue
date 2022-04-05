@@ -20,7 +20,7 @@ export default defineComponent({
       options() {
 return {
       responsive: true,
-      aspectRatio: 1.33,
+      aspectRatio: 3,
       plugins: {
         legend: {
           display:false
