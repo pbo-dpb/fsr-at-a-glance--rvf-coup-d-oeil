@@ -21,11 +21,12 @@ export default defineComponent({
       options() {
 return {
       responsive: true,
-            aspectRatio: 3,
+      aspectRatio: 3,
       radius: 0,
       plugins: {
         legend: {
-          display:false
+          display:true,
+          position:"bottom"
         },
         tooltip: {
                 callbacks: {
@@ -61,6 +62,7 @@ return {
         datasets: [
          {
             data: this.province.revenue.values,
+            label: this.$root.strings.revenue_label,
             borderColor: "#0072AF",
             cubicInterpolationMode: 'monotone',
             segment: {
@@ -72,6 +74,7 @@ return {
           },
           {
             data: this.province.program_spending.values,
+            label: this.$root.strings.program_spending_label,
             borderColor: "#AD3D00",
             cubicInterpolationMode: 'monotone',
             segment: {

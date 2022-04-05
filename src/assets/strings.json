@@ -19,6 +19,14 @@
         "en": "Program spending & revenue",
         "fr": "Dépenses de programmes & revenus"
     },
+    "program_spending_label": {
+        "en": "Program spending",
+        "fr": "Dépenses de programmes"
+    },
+    "revenue_label": {
+        "en": "Revenue",
+        "fr": "Revenus"
+    },
    "net_debt": {
        "en": "Net debt",
        "fr": "Dette nette"
