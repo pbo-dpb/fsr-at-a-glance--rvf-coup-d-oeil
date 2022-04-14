@@ -15,13 +15,14 @@ export default defineComponent({
   props: {
       province: {type: Province, required: true},
   },
-  
   computed: {
-   
       options() {
 return {
       responsive: true,
       aspectRatio: 3,
+       interaction: {
+    intersect: false
+  },
       radius: 0,
       plugins: {
         legend: {
