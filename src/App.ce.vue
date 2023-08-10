@@ -1,9 +1,15 @@
 <template>
-  <section class="bg-blue-100 text-blue-800 font-semibold border border-blue-300 p-4 flex flex-col gap-4 rounded mb-16"
-    v-if="debug">
+  <section class="bg-teal-100 text-teal-800 font-semibold border border-teal-300 p-4 rounded mb-16 " v-if="debug">
+    <div class="font-mono mb-4 text-teal-800 text-center border-b border-teal-300 pb-2">DEBUG</div>
+    <div class="flex flex-row justify-between">
 
-    <legend>xlsx<br><input type="file" name="file" @change="handleDebugFile" /></legend>
+      <legend class="w-1/3">Overwrite with <a :href="Object.values(yearSpreadsheetUrls).slice(-1)">xlsx</a><br><input
+          type="file" name="file" @change="handleDebugFile" /></legend>
 
+      <button @click="language = language == 'en' ? 'fr' : 'en'" class="w-12 border border-teal-800 p-2">{{ language ==
+        'en'
+        ? 'fr' : 'en' }}</button>
+    </div>
   </section>
 
   <LoadingIndicator v-if="!latestFsrYear" class="h-8 w-8"></LoadingIndicator>
@@ -14,8 +20,7 @@
     </div>
     <div class="col-span-3 pt-4 lg:pt-0">
 
-      <!--<province-view v-if="selectedProvince" :province="selectedProvince"></province-view>-->
-      <div v-if="selectedRegion">Region</div>
+      <RegionView v-if="selectedRegion" :region="selectedRegion" />
       <SplashScreen v-else></SplashScreen>
     </div>
 
@@ -25,8 +30,8 @@
 <script>
 import RegionSelector from './components/RegionSelector.vue';
 import SplashScreen from "./components/SplashScreen.vue";
-/*import ProvinceView from "./components/ProvinceView.vue";
-*/
+import RegionView from "./components/RegionView.vue";
+
 const yearSpreadsheetUrls = import.meta.glob('./assets/years/*.xlsx', { as: 'url', eager: true })
 import store from "./Store.js"
 import { mapWritableState, mapState } from 'pinia'
@@ -37,14 +42,19 @@ export default {
   components: {
     LoadingIndicator,
     RegionSelector,
-    /*ProvinceView,*/
+    RegionView,
     SplashScreen
   },
   props: {
     publicPath: String,
   },
+  data() {
+    return {
+      yearSpreadsheetUrls
+    }
+  },
   computed: {
-    ...mapWritableState(store, ['selectedFsrYear']),
+    ...mapWritableState(store, ['selectedFsrYear', 'language']),
     ...mapState(store, ['strings', 'years', 'selectedRegion', 'latestFsrYear', 'selectedYear']),
     debug() {
       return this.$root.debug;
@@ -53,7 +63,7 @@ export default {
   mounted() {
 
     Promise.all(
-      Object.values(yearSpreadsheetUrls).map(spreadsheetUrl => {
+      Object.values(this.yearSpreadsheetUrls).map(spreadsheetUrl => {
         return new Promise((resolve, reject) => {
           fetch(spreadsheetUrl)
             .then(response => response.blob())
