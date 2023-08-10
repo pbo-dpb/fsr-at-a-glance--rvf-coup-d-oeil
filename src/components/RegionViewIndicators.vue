@@ -1,12 +1,12 @@
 <template>
     <figure class="flex flex-col gap-4">
-        <div class="flex flex-row justify-end">
+        <div class="flex flex-row justify-end ">
 
 
 
 
             <label
-                class="text-sm font-semibold border rounded border-red-800 text-red-800 px-2 py-1 flex flex-row items-center gap-2">
+                class="bg-purple-50 text-sm font-semibold border rounded border-purple-800 text-purple-800 px-2 py-1 flex flex-row items-center gap-2 select-none">
                 <input type="checkbox" :checked="compareWith" @change="setCompareWith(null)"> {{
                     strings.indicators_comparison_toggle }}
             </label>

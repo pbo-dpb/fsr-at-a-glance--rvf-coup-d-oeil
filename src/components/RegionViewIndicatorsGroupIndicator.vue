@@ -4,16 +4,16 @@
     </div>
 
     <div class="text-center flex flex-col gap-1" v-for="(column, index) in regionValue">
-        <div class="block lg:hidden text-xs font-semibold">
+        <div class="block lg:hidden text-xs font-semibold tabular-nums">
             {{ dataColumnLabels[index] }}
         </div>
         <span>{{ new Intl.NumberFormat(`${language}-CA`,).format(column) }}</span>
-        <div v-if="compareWith" class="block lg:hidden  border rounded border-red-800 text-red-800 text-sm ">
+        <div v-if="compareWith" class="block lg:hidden  tabular-nums rounded  text-purple-800 text-sm bg-purple-50">
             {{ new Intl.NumberFormat(`${language}-CA`,).format(compareValues[index]) }}
         </div>
     </div>
 
-    <div v-for="column in compareValues" v-if="compareWith" class="hidden lg:block text-center">
+    <div v-for="column in compareValues" v-if="compareWith" class="hidden tabular-nums lg:block text-center">
         {{ new Intl.NumberFormat(`${language}-CA`,).format(column) }}
     </div>
 </template>

@@ -80,8 +80,8 @@
         "fr": "Croissance de la productivité de la main-d'œuvre"
     },
     "indicators_keys_nominal_gdp_growth": {
-        "en": "Labour productivity growth",
-        "fr": "Croissance de la productivité de la main-d'œuvre"
+        "en": "Nominal GDP growth",
+        "fr": "Croissance du PIB nominal"
     },
     "indicators_keys_effective_interest_rate": {
         "en": "Effective interest rate",
