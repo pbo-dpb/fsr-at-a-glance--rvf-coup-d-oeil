@@ -27,23 +27,23 @@
         "en": "Revenue",
         "fr": "Revenus"
     },
-   "net_debt": {
-       "en": "Net debt",
-       "fr": "Dette nette"
-   },
-   "percentage_of_gdp_axis_label": {
-       "en": "% of GDP",
-       "fr": "% du PIB"
-   },
-   "percentage_of_tooltip_label": {
-    "en": ":percentage of GDP",
-    "fr": ":percentage du PIB"
+    "net_debt": {
+        "en": "Net debt",
+        "fr": "Dette nette"
+    },
+    "percentage_of_gdp_axis_label": {
+        "en": "% of GDP",
+        "fr": "% du PIB"
+    },
+    "percentage_of_tooltip_label": {
+        "en": ":percentage of GDP",
+        "fr": ":percentage du PIB"
     },
     "indicators_comparison_toggle": {
-        "en": "Display national average",
-        "fr": "Afficher la moyenne nationale"
+        "en": "Compare with national average",
+        "fr": "Comparer à la moyenne nationale"
     },
-    "indicator_comparison_label": {
+    "indicator_comparison_label_nat_avg": {
         "en": "vs. national average",
         "fr": "Par rapport à la moyenne nationale"
     },
@@ -107,5 +107,4 @@
         "en": "Net debt",
         "fr": "Dette nette"
     }
-
 }

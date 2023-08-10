@@ -29,4 +29,11 @@ export default class Indicators {
 
     }
 
+
+    static structure = {
+        "demographics": ["population_growth", "senior_dependency_ratio"],
+        "economics": ["real_gdp_growth", "employment_growth", "labour_productivity_growth", "nominal_gdp_growth", "effective_interest_rate"],
+        "fiscal": ["revenue", "program_spending", "primary_balance", "debt_interest_charges", "net_debt"]
+    }
+
 }

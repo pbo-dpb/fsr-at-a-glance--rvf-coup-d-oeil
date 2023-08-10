@@ -1,6 +1,6 @@
 <template>
   <section class="bg-teal-100 text-teal-800 font-semibold border border-teal-300 p-4 rounded mb-16 " v-if="debug">
-    <div class="font-mono mb-4 text-teal-800 text-center border-b border-teal-300 pb-2">DEBUG</div>
+    <div class="font-mono mb-4 text-teal-800 text-center border-b border-teal-300 pb-2">DEBUG 🔧‍</div>
     <div class="flex flex-row justify-between">
 
       <legend class="w-1/3"><a :href="Object.values(yearSpreadsheetUrls).slice(-1)">XLSX</a> overwrite<br><input

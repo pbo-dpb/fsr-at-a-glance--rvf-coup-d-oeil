@@ -19,16 +19,17 @@
         </div>
     </div>
 
-    <!--<ProvinceViewIndicators :province="province"></ProvinceViewIndicators>-->
+    <RegionViewIndicators :region="region"></RegionViewIndicators>
 </template>
 <script>
 import { mapState } from 'pinia'
 import store from "../Store.js"
 import Region from "../Models/Region";
 import RegionViewBullets from "./RegionViewBullets.vue";
+import RegionViewIndicators from "./RegionViewIndicators.vue"
 /*
 import ProvinceViewNetDebt from "./ProvinceViewNetDebt.vue";
-import ProvinceViewIndicators from "./ProvinceViewIndicators.vue"
+
 import ProvinceViewProgramSpendingRevenue from "./ProvinceViewProgramSpendingRevenue.vue";*/
 
 export default {
@@ -44,9 +45,10 @@ export default {
     },
     components: {
         RegionViewBullets,
+        RegionViewIndicators
         /*ProvinceViewNetDebt, 
         ProvinceViewProgramSpendingRevenue, 
-        ProvinceViewIndicators*/
+        */
     }
 }
 </script>
