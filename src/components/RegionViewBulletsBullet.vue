@@ -9,7 +9,7 @@ import { mapState } from 'pinia'
 export default {
     props: {
         bullet: {
-            type: String,
+            type: Object,
             required: true
         }
     },

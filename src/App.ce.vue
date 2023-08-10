@@ -3,8 +3,8 @@
     <div class="font-mono mb-4 text-teal-800 text-center border-b border-teal-300 pb-2">DEBUG</div>
     <div class="flex flex-row justify-between">
 
-      <legend class="w-1/3">Overwrite with <a :href="Object.values(yearSpreadsheetUrls).slice(-1)">xlsx</a><br><input
-          type="file" name="file" @change="handleDebugFile" /></legend>
+      <legend class="w-1/3"><a :href="Object.values(yearSpreadsheetUrls).slice(-1)">XLSX</a> overwrite<br><input
+          type="file" name="file" @change="handleDebugFile" ref="debugFileInput" /></legend>
 
       <button @click="language = language == 'en' ? 'fr' : 'en'" class="w-12 border border-teal-800 p-2">{{ language ==
         'en'
@@ -54,8 +54,8 @@ export default {
     }
   },
   computed: {
-    ...mapWritableState(store, ['selectedFsrYear', 'language']),
-    ...mapState(store, ['strings', 'years', 'selectedRegion', 'latestFsrYear', 'selectedYear']),
+    ...mapWritableState(store, ['selectedRegion', 'selectedFsrYear', 'language']),
+    ...mapState(store, ['strings', 'years', 'latestFsrYear', 'selectedYear']),
     debug() {
       return this.$root.debug;
     }
@@ -84,6 +84,8 @@ export default {
     handleDebugFile(e) {
       store().instanciateYearFromFile(e.target.files[0])
       this.selectedFsrYear = this.latestFsrYear;
+      this.$refs.debugFileInput.value = null;
+      this.selectedRegion = null
     }
   },
 };
