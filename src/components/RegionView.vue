@@ -10,7 +10,7 @@
         <div class="flex flex-col gap-4">
             <figure>
                 <h2 class="leading-none font-thin mb-4">{{ strings.program_spending }}</h2>
-                <!--<ProvinceViewProgramSpendingRevenue :province="province"></ProvinceViewProgramSpendingRevenue>-->
+                <RegionViewProgramSpendingRevenue :region="region"></RegionViewProgramSpendingRevenue>
             </figure>
             <figure>
                 <h2 class="leading-none font-thin mb-4">{{ strings.net_debt }}</h2>
@@ -29,8 +29,7 @@ import RegionViewBullets from "./RegionViewBullets.vue";
 import RegionViewIndicators from "./RegionViewIndicators.vue"
 
 import RegionViewNetDebt from "./RegionViewNetDebt.vue";
-/*
-import ProvinceViewProgramSpendingRevenue from "./ProvinceViewProgramSpendingRevenue.vue";*/
+import RegionViewProgramSpendingRevenue from "./RegionViewProgramSpendingRevenue.vue";
 
 export default {
     props: {
@@ -47,8 +46,8 @@ export default {
         RegionViewBullets,
         RegionViewIndicators,
         RegionViewNetDebt,
-        /*ProvinceViewProgramSpendingRevenue, 
-        */
+        RegionViewProgramSpendingRevenue,
+
     }
 }
 </script>

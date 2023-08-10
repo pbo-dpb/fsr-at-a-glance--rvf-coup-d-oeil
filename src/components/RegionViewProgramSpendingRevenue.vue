@@ -2,20 +2,24 @@
   <LineChart :chartData="chartData" :options="options" />
 </template>
 
-<script >
+<script>
+import { mapState } from 'pinia'
+import store from "../Store.js"
 import { defineComponent, ref } from 'vue';
 import { LineChart } from 'vue-chart-3';
 import { Chart, registerables } from "chart.js";
-import Province from '../Models/Province';
+import Region from '../Models/Region';
+import Localizer from "../Localizer"
 
 Chart.register(...registerables);
 
 export default defineComponent({
   components: { LineChart },
   props: {
-    province: { type: Province, required: true },
+    region: { type: Region, required: true },
   },
   computed: {
+    ...mapState(store, ['language', 'strings', 'selectedYear']),
     options() {
       return {
         responsive: true,
@@ -32,13 +36,14 @@ export default defineComponent({
           tooltip: {
             callbacks: {
               label: (context) => {
+                let localizer = new Localizer(this.strings);
                 let label = context.dataset.label || '';
 
                 if (label) {
                   label += ': ';
                 }
                 if (context.parsed.y !== null) {
-                  label += this.$root.strings.__('percentage_of_tooltip_label', { percentage: new Intl.NumberFormat(`${this.$root.strings.language}-CA`, { style: 'percent' }).format(context.parsed.y / 100) });
+                  label += localizer.__('percentage_of_tooltip_label', { percentage: new Intl.NumberFormat(`${this.language}-CA`, { style: 'percent' }).format(context.parsed.y / 100) });
                 }
                 return label;
               }
@@ -50,7 +55,7 @@ export default defineComponent({
             display: true,
             title: {
               display: true,
-              text: this.$root.strings.percentage_of_gdp_axis_label,
+              text: this.strings.percentage_of_gdp_axis_label,
             }
           }
         }
@@ -59,28 +64,28 @@ export default defineComponent({
 
     chartData() {
       return {
-        labels: this.$root.payload.labels,
+        labels: this.region.datasets['revenue'].range,
         datasets: [
           {
-            data: this.province.revenue.values,
-            label: this.$root.strings.revenue_label,
+            data: this.region.datasets['revenue'].values,
+            label: this.strings.revenue_label,
             borderColor: "#2d5071",
             cubicInterpolationMode: 'monotone',
             segment: {
               borderDash: ctx => {
-                if (ctx.p0.parsed.x > this.$root.payload.labels.indexOf(this.$root.payload.year)) return [6, 6];
+                if (ctx.p0.parsed.x > this.region.datasets['revenue'].range.indexOf(this.selectedYear.fsr_year)) return [3, 2];
                 return undefined;
               },
             },
           },
           {
-            data: this.province.program_spending.values,
-            label: this.$root.strings.program_spending_label,
-            borderColor: "#cd5e76",
+            data: this.region.datasets['program_spending'].values,
+            label: this.strings.program_spending_label,
+            borderColor: "#c85c7a",
             cubicInterpolationMode: 'monotone',
             segment: {
               borderDash: ctx => {
-                if (ctx.p0.parsed.x > this.$root.payload.labels.indexOf(this.$root.payload.year)) return [6, 6];
+                if (ctx.p0.parsed.x > this.region.datasets['revenue'].range.indexOf(this.selectedYear.fsr_year)) return [3, 2];
                 return undefined;
               },
             },
