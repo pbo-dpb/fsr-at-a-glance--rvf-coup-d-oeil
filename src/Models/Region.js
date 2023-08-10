@@ -1,11 +1,15 @@
 import Bullet from "./Bullet";
 import Dataset from "./Dataset";
 import Indicators from "./Indicators";
+import blStrings from "../assets/regions.json?json";
+
 
 export default class Region {
     constructor(payload) {
 
         this.id = payload?.id;
+        if (!this.id) throw "ID must be provided to instanciate region.";
+        this.name = blStrings[this.id];
 
         this.population_growth = payload?.population_growth
         this.senior_dependency_ratio = payload?.senior_dependency_ratio
@@ -59,7 +63,7 @@ export default class Region {
                 }
             });
 
-            debugger
+
             return region;
         });
 

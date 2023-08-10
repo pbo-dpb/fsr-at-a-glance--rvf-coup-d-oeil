@@ -6,65 +6,74 @@
 
   </section>
 
-  <LoadingIndicator v-if="!payload" class="h-8 w-8"></LoadingIndicator>
+  <LoadingIndicator v-if="!latestFsrYear" class="h-8 w-8"></LoadingIndicator>
   <aside v-else class="lg:grid grid-cols-4 gap-4">
 
     <div>
-      <!--<provinces-selector @pick="setSelectedProvince"></provinces-selector>-->
+      <RegionSelector v-if="selectedYear"></RegionSelector>
     </div>
     <div class="col-span-3 pt-4 lg:pt-0">
 
-      <!--<province-view v-if="selectedProvince" :province="selectedProvince"></province-view>
-      <SplashScreen v-else></SplashScreen>-->
+      <!--<province-view v-if="selectedProvince" :province="selectedProvince"></province-view>-->
+      <div v-if="selectedRegion">Region</div>
+      <SplashScreen v-else></SplashScreen>
     </div>
 
   </aside>
 </template>
 
 <script>
-/*import ProvincesSelector from './components/ProvincesSelector.vue';
-import ProvinceView from "./components/ProvinceView.vue";
-import Province from "./Models/Province.js"
-import SplashScreen from "./components/SplashScreen.vue";*/
-const years = import.meta.glob('./assets/years/*.xlsx', { as: 'url', eager: true })
+import RegionSelector from './components/RegionSelector.vue';
+import SplashScreen from "./components/SplashScreen.vue";
+/*import ProvinceView from "./components/ProvinceView.vue";
+*/
+const yearSpreadsheetUrls = import.meta.glob('./assets/years/*.xlsx', { as: 'url', eager: true })
 import store from "./Store.js"
-import { mapState } from 'pinia'
+import { mapWritableState, mapState } from 'pinia'
 
 import LoadingIndicator from "./components/LoadingIndicator.vue";
 
 export default {
-  data() {
-    return {
-      /*strings: new Localizer(),*/
-      selectedProvince: null
-    };
-  },
   components: {
     LoadingIndicator,
-    /*ProvincesSelector,
-   
-    ProvinceView,
-    SplashScreen*/
+    RegionSelector,
+    /*ProvinceView,*/
+    SplashScreen
   },
   props: {
     publicPath: String,
   },
   computed: {
+    ...mapWritableState(store, ['selectedFsrYear']),
+    ...mapState(store, ['strings', 'years', 'selectedRegion', 'latestFsrYear', 'selectedYear']),
     debug() {
       return this.$root.debug;
     }
   },
   mounted() {
-    Object.values(years).forEach(yearUrl => {
 
-      fetch(yearUrl)
-        .then(response => response.blob())
-        .then(blob => store().instanciateYearFromFile(blob))
-    });
+    Promise.all(
+      Object.values(yearSpreadsheetUrls).map(spreadsheetUrl => {
+        return new Promise((resolve, reject) => {
+          fetch(spreadsheetUrl)
+            .then(response => response.blob())
+            .then(blob => store().instanciateYearFromFile(blob))
+            .then(() => {
+              resolve();
+            })
+        });
+      })).then(() => {
+        if (this.latestFsrYear)
+          this.selectedFsrYear = this.latestFsrYear;
+      });
+
+
+
   },
   methods: {
     handleDebugFile(e) {
       store().instanciateYearFromFile(e.target.files[0])
+      this.selectedFsrYear = this.latestFsrYear;
     }
   },
 };

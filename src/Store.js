@@ -1,17 +1,18 @@
 import { defineStore } from 'pinia'
 import Year from './Models/Year';
-let loc = {}
+import blStrings from "./assets/strings.json?json";
 import readXlsxFile from 'read-excel-file'
 import Region from './Models/Region';
 import Indicators from './Models/Indicators';
 
-const language = document.documentElement.lang;
 
 
 export default defineStore('fsr', {
     state: () => ({
-        strings: loc,
-        years: []
+        selectedRegion: null,
+        selectedFsrYear: null,
+        years: [],
+        language: document.documentElement.lang
     }),
     actions: {
         async instanciateYearFromFile(xlsxBytes) {
@@ -45,12 +46,33 @@ export default defineStore('fsr', {
 
             year.regions = Region.buildRegionsFromRows(indicators, sustainability, bullets, charts);
 
+            let years = [
+                ...this.years.filter(yr => yr.fsr_year != year.fsr_year),
+                year
+            ];
+
+            this.years = years;
         },
+
     },
 
     getters: {
 
+        latestFsrYear(state) {
+            return Math.max(0, ...state.years.map(year => year.fsr_year));
+        },
 
+        selectedYear(state) {
+            return state.years.find(year => year.fsr_year == state.selectedFsrYear);
+        },
+
+        strings(state) {
+            let loc = {}
+            for (const [key, value] of Object.entries(blStrings)) {
+                loc[key] = value[state.language]
+            }
+            return loc;
+        }
 
     }
 
