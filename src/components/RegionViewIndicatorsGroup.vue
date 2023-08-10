@@ -26,11 +26,9 @@
         <div class="hidden lg:block font-semibold text-center" v-if="compareWith" v-for="column in dataColumnLabels">
             {{ column }}
         </div>
-
         <RegionViewIndicatorsGroupIndicator v-for="indicatorKey in indicators" :indicator-key="indicatorKey"
             :key="indicatorKey" :region="region" :compare-with="compareWith">
         </RegionViewIndicatorsGroupIndicator>
-
 
     </figure>
 </template>
