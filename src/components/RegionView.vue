@@ -14,7 +14,7 @@
             </figure>
             <figure>
                 <h2 class="leading-none font-thin mb-4">{{ strings.net_debt }}</h2>
-                <!--<ProvinceViewNetDebt :province="province"></ProvinceViewNetDebt>-->
+                <RegionViewNetDebt :region="region"></RegionViewNetDebt>
             </figure>
         </div>
     </div>
@@ -27,9 +27,9 @@ import store from "../Store.js"
 import Region from "../Models/Region";
 import RegionViewBullets from "./RegionViewBullets.vue";
 import RegionViewIndicators from "./RegionViewIndicators.vue"
-/*
-import ProvinceViewNetDebt from "./ProvinceViewNetDebt.vue";
 
+import RegionViewNetDebt from "./RegionViewNetDebt.vue";
+/*
 import ProvinceViewProgramSpendingRevenue from "./ProvinceViewProgramSpendingRevenue.vue";*/
 
 export default {
@@ -45,9 +45,9 @@ export default {
     },
     components: {
         RegionViewBullets,
-        RegionViewIndicators
-        /*ProvinceViewNetDebt, 
-        ProvinceViewProgramSpendingRevenue, 
+        RegionViewIndicators,
+        RegionViewNetDebt,
+        /*ProvinceViewProgramSpendingRevenue, 
         */
     }
 }
