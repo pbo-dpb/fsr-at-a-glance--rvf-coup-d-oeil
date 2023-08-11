@@ -12,17 +12,19 @@
         </svg>
 
     </div>
+
+    <Infographic />
 </template>
 <script>
 
 import { mapState } from 'pinia'
 import store from "../Store.js"
+import Infographic from './Infographic/Infographic.vue';
 
 export default {
     computed: {
         ...mapState(store, ['strings']),
-
     },
-
+    components: { Infographic }
 }
 </script>
