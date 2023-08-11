@@ -17,12 +17,16 @@
                 'territories'
                 ? 'Terr.' :
                 region.id.toUpperCase() }}</div>
-            <div v-if="region.is_sustainable">☀️</div>
-            <div v-if="!region.is_sustainable">☁️</div>
+            <img v-if="region.is_sustainable" :src="sustainabilityGlyphTrue" class="w-6 h-6">
+            <img v-if="region.is_sustainable === false" :src="sustainabilityGlyphFalse" class="w-6 h-6">
+            <img v-if="region.is_sustainable === null" :src="sustainabilityGlyphNull" class="w-6 h-6">
         </div>
     </figure>
 </template>
 <script>
+import sustainabilityGlyphFalse from "../../assets/glyphs/sustainability-glyph-false.svg?url"
+import sustainabilityGlyphNull from "../../assets/glyphs/sustainability-glyph-null.svg?url"
+import sustainabilityGlyphTrue from "../../assets/glyphs/sustainability-glyph-true.svg?url"
 import baseLayer from "../../assets/canada-base-map.svg?raw"
 import { mapWritableState, mapState } from 'pinia'
 import store from "../../Store.js"
@@ -31,6 +35,9 @@ export default {
     data() {
         return {
             highlightedRegion: null,
+            sustainabilityGlyphFalse,
+            sustainabilityGlyphNull,
+            sustainabilityGlyphTrue
         }
     },
     computed: {
