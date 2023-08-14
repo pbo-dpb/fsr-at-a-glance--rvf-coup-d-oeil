@@ -1,7 +1,8 @@
 <template>
     <li class="cursor-pointer leading-tight">
         <a @click="selectRegion" class="px-4 py-2 -mx-2 block  text-blue-800 underline hover:text-blue-900 "
-            :class="isSelectedRegion ? 'bg-blue-100 lg:rounded-tl lg:rounded-bl' : ''">{{ region.name[language] }}</a>
+            :class="isSelectedRegion ? 'bg-blue-100 lg:rounded-tl lg:rounded-bl' : ''">{{ region ? region.name[language] :
+                strings.infographic_type }}</a>
     </li>
 </template>
 <script>
@@ -13,11 +14,10 @@ export default {
     props: {
         region: {
             type: Region,
-            required: true
         }
     },
     computed: {
-        ...mapState(store, ['language', 'selectedRegion']),
+        ...mapState(store, ['language', 'selectedRegion', 'strings']),
         isSelectedRegion() {
             return this.selectedRegion === this.region;
         }

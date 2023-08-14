@@ -14,6 +14,8 @@
       </button>
     </div>
     <ul :class="{ 'hidden': !expanded }" class='lg:block'>
+      <region-selector-item :region="null" @pick="pickRegion(null)"></region-selector-item>
+      <hr class="mb-4 mt-4">
       <region-selector-item v-for="region in regions" :key="region.id" :region="region"
         @pick="pickRegion(region)"></region-selector-item>
     </ul>
