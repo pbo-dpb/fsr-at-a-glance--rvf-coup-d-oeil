@@ -1,15 +1,15 @@
 <template>
     <figure class="lg:w-2/3 mx-auto relative @container/map">
 
-        <div class="" ref="infographic">
+        <div class="w-full h-fit" ref="infographic">
         </div>
         <div v-for="region in regions" style="
             width: 42px; 
             position: absolute;
             background: linear-gradient(0, rgba(219, 234, 254,0.7) 0%, rgba(239, 246, 255,0.9) 66%);
         " :style="{
-            top: coordsForRegion(region).y,
-            left: coordsForRegion(region).x
+            top: regionCoords[region.id].y,
+            left: regionCoords[region.id].x
         }"
             class="shadow-xl ring-offset-2 hover:ring-2 ring-blue-800 cursor-pointer flex flex-col gap-1 items-center p-1 scale-75 @xl/map:scale-100"
             @mouseover="highlightRegion(region)" @mouseleave="highlightRegion(null)" @click="selectedRegion = region">
@@ -39,7 +39,10 @@ export default {
             highlightedRegion: null,
             sustainabilityGlyphFalse,
             sustainabilityGlyphNull,
-            sustainabilityGlyphTrue
+            sustainabilityGlyphTrue,
+            resizeObserver: null,
+            mapWidth: 0,
+            mapHeight: 0
         }
     },
     computed: {
@@ -48,7 +51,25 @@ export default {
         regions() {
             if (!this.selectedYear) return []
             return this.selectedYear.regions;
+        },
+        regionCoords() {
+            return {
+                ab: this.coordsForRegionId('ab'),
+                bc: this.coordsForRegionId('bc'),
+                mb: this.coordsForRegionId('mb'),
+                nb: this.coordsForRegionId('nb'),
+                nl: this.coordsForRegionId('nl'),
+                ns: this.coordsForRegionId('ns'),
+                on: this.coordsForRegionId('on'),
+                pe: this.coordsForRegionId('pe'),
+                qc: this.coordsForRegionId('qc'),
+                sk: this.coordsForRegionId('sk'),
+                territories: this.coordsForRegionId('territories'),
+            }
         }
+    },
+    beforeDestroy() {
+        this.resizeObserver.unobserve(this.$refs.infographic)
     },
     methods: {
         applyHighlightToSvgDomEl(domEl) {
@@ -79,6 +100,9 @@ export default {
             })
         },
         redraw() {
+            if (!this.$refs.infographic) return null
+            this.mapWidth = this.$refs.infographic.offsetWidth;
+            this.mapHeight = this.$refs.infographic.offsetHeight;
             const infoBase = this.$refs.infographic;
 
             infoBase.innerHTML = baseLayer;
@@ -89,13 +113,13 @@ export default {
         highlightRegion(region) {
             this.highlightedRegion = region?.id
         },
-        coordsForRegion(region) {
+        coordsForRegionId(regionId) {
             if (!this.$refs.infographic) return { x: 0, y: 0 }
-            let iWidth = this.$refs.infographic.offsetWidth;
-            let iHeight = this.$refs.infographic.offsetHeight;
+            let iWidth = this.mapWidth;
+            let iHeight = this.mapHeight;
             let x;
             let y;
-            switch (region.id) {
+            switch (regionId) {
                 case "ab":
                     x = iWidth * 0.175
                     y = iHeight * 0.6
@@ -152,6 +176,8 @@ export default {
         }
     },
     mounted() {
+        this.resizeObserver = new ResizeObserver(this.redraw)
+        this.resizeObserver.observe(this.$refs.infographic)
         this.redraw();
     },
 

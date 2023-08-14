@@ -25,7 +25,11 @@ export default defineStore('fsr', {
                 if (item[2]) {
                     accumulator[item[0]] = { en: item[1], fr: item[2] };
                 } else {
-                    accumulator[item[0]] = item[1];
+                    let accumulatorContent = item[1];
+                    // Strings can be casted to bool for FSR vars.
+                    if (accumulatorContent === "TRUE") accumulatorContent = true;
+                    if (accumulatorContent === "FALSE") accumulatorContent = false;
+                    accumulator[item[0]] = accumulatorContent
                 }
                 return accumulator;
             }, {});

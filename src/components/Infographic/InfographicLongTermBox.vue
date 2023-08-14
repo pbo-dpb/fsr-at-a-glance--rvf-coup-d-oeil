@@ -1,7 +1,7 @@
 <template>
-    <div class="flex flex-col gap-2 items-center bg-gray-50 p-4 rounded">
+    <div class="flex flex-col gap-2 items-center bg-gradient-to-b from-gray-50 to-gray-100 p-4 rounded">
         <img :src="glyph" class="w-12 h-12" aria-hidden="true" role="presentation">
-        <div class="font-thin text-lg">{{ title }}</div>
+        <div class="font-thin text-lg text-center">{{ title }}</div>
         <div class="leading-snug text-sm text-center" v-html="contentHtml"></div>
     </div>
 </template>

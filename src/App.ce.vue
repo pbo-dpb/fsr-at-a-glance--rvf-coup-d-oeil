@@ -1,12 +1,12 @@
 <template>
-  <section class="bg-teal-100 text-teal-800 font-semibold border border-teal-300 p-4 rounded mb-16 " v-if="debug">
-    <div class="font-mono mb-4 text-teal-800 text-center border-b border-teal-300 pb-2">DEBUG 🔧‍</div>
+  <section class="font-semibold border border-gray-300 p-4 rounded mb-16 bg-gray-100" v-if="debug">
+    <div class="font-mono mb-4 text-gray-800 text-center border-b border-gray-300 pb-2">DEBUG 🔧‍</div>
     <div class="flex flex-row justify-between">
 
       <legend class="w-1/3"><a :href="Object.values(yearSpreadsheetUrls).slice(-1)">XLSX</a> overwrite<br><input
           type="file" name="file" @change="handleDebugFile" ref="debugFileInput" /></legend>
 
-      <button @click="language = language == 'en' ? 'fr' : 'en'" class="w-12 border border-teal-800 p-2">{{ language ==
+      <button @click="language = language == 'en' ? 'fr' : 'en'" class="w-12 border border-gray-800 p-2">{{ language ==
         'en'
         ? 'fr' : 'en' }}</button>
     </div>
@@ -21,7 +21,7 @@
     <div class="col-span-3 pt-4 lg:pt-0">
 
       <RegionView v-if="selectedRegion" :region="selectedRegion" />
-      <SplashScreen v-else></SplashScreen>
+      <SplashScreen v-show="!selectedRegion"></SplashScreen>
     </div>
 
   </aside>
