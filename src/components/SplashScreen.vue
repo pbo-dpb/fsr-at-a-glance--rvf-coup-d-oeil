@@ -1,8 +1,8 @@
 <template>
     <div
-        class="flex flex-col-reverse lg:flex-col items-center justify-center align-middle gap-4 text-mulberry-800 border-2 border-mulberry-50 p-4 rounded mb-4">
+        class="flex flex-col-reverse lg:flex-col items-center justify-center align-middle gap-4 text-mulberry-800 border-2 border-mulberry-600 p-4 rounded mb-4">
 
-        <p class="italic  prose max-w-none">{{ strings.intro }}</p>
+        <p class="prose leading-snug max-w-none">{{ strings.intro }}</p>
 
         <p class="text-xl font-thin prose">{{ strings.splash_cta }}</p>
 
