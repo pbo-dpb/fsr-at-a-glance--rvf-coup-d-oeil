@@ -22,7 +22,11 @@ export default defineStore('fsr', {
              */
             let vars = await readXlsxFile(xlsxBytes, { sheet: 'VARS' });
             vars = vars.reduce((accumulator, item) => {
-                accumulator[item[0]] = item[1];
+                if (item[2]) {
+                    accumulator[item[0]] = { en: item[1], fr: item[2] };
+                } else {
+                    accumulator[item[0]] = item[1];
+                }
                 return accumulator;
             }, {});
 

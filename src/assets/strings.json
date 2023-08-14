@@ -106,5 +106,9 @@
     "indicators_keys_net_debt": {
         "en": "Net debt",
         "fr": "Dette nette"
+    },
+    "infographic_subsus_legend_true": {
+        "en": "Sustainable",
+        "fr": "Viable"
     }
 }

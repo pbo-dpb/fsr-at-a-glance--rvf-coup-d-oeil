@@ -2,8 +2,18 @@ export default class Year {
     constructor(payload) {
         this.indicators_headers = payload.indicators_headers;
         this.fsr_year = payload.fsr_year;
-        this.fsr_url_en = payload.fsr_url_en;
-        this.fsr_url_fr = payload.fsr_url_fr;
+        this.fsr_url = payload.fsr_url;
+        this.infographic_subsus_tl = payload.infographic_subsus_tl;
+        this.infographic_subsus_tr = payload.infographic_subsus_tr;
+        this.infographic_subsus_br = payload.infographic_subsus_br;
+
+
+        this.infographic_subsus_legend_fg_title = payload.infographic_subsus_legend_fg_title
+        this.infographic_subsus_legend_fg_range_sunny = payload.infographic_subsus_legend_fg_range_sunny
+        this.infographic_subsus_legend_fg_range_cloudy = payload.infographic_subsus_legend_fg_range_cloudy
+        this.infographic_subsus_legend_fg_range_partly = payload.infographic_subsus_legend_fg_range_partly
+
+
         this.population_growth = payload?.population_growth
         this.senior_dependency_ratio = payload?.senior_dependency_ratio
         this.real_gdp_growth = payload?.real_gdp_growth
