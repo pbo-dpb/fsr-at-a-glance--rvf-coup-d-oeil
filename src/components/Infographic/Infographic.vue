@@ -1,4 +1,17 @@
 <template>
+    <div class="my-8 flex flex-col gap-2">
+        <div
+            class="flex-none max-w-max px-2 py-1 text-sm font-semibold border-l-4 bg-gray-100 border-gray-800 text-gray-800 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-200 text-xs">
+            {{ strings.infographic_type }}
+        </div>
+        <h2 class="text-4xl font-thin">
+
+            {{ strings.infographic_title }}
+        </h2>
+        <div class="text-sm font-semibold">{{ strings.infographic_legend }}</div>
+    </div>
+
+
     <div class="flex flex-col gap-4 md:flex-row justify-around items-center mb-4 md:-mb-16" v-if="selectedYear">
         <InfographicTextBox v-html="content.tl"></InfographicTextBox>
         <InfographicTextBox v-html="content.tr"></InfographicTextBox>

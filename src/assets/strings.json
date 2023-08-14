@@ -107,6 +107,18 @@
         "en": "Net debt",
         "fr": "Dette nette"
     },
+    "infographic_type": {
+        "en": "Infographic",
+        "fr": "Infographie"
+    },
+    "infographic_title": {
+        "en": "Long-term fiscal out for Canada",
+        "fr": "Perspectives financières pour le Canada"
+    },
+    "infographic_legend": {
+        "en": "Assessment of the long-term sustainability of current fiscal policy for the federal government, subnational government and public pension plans",
+        "fr": "Évaluation de la viabilité à long terme de la politique financière actuelle du gouvernement fédéral, des administrations infranationales et des régimes de retraite généraux"
+    },
     "infographic_subsus_title": {
         "en": "Sustainability by subnational government",
         "fr": "Viabilité de chacune des administrations infranationales"

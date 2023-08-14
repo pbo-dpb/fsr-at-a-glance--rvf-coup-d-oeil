@@ -6,18 +6,15 @@
         </div>
         <div>
             <div class="flex flex-row gap-2 items-center">
-                <img :src="sustainabilityGlyphFalse" class="w-12 h-12" />
+                <img :src="sustainabilityGlyphFalse" class="w-12 h-12" aria-hidden="true" role="presentation" />
                 <div class="text-xl flex flex-col" v-html="content.infographic_fg_pos_title"></div>
-
             </div>
-
             <div class="prose prose-invert text-sm text-left" v-html="content.fg_pos_def"></div>
         </div>
         <div>
             <div class="flex flex-row gap-2 items-center">
-                <img :src="sustainabilityGlyphTrue" class="w-12 h-12" />
+                <img :src="sustainabilityGlyphTrue" class="w-12 h-12" aria-hidden="true" role="presentation" />
                 <div class="text-xl flex flex-col" v-html="content.infographic_fg_neg_title"></div>
-
             </div>
             <div class="prose prose-invert text-sm" v-html="content.fg_neg_def"></div>
         </div>
