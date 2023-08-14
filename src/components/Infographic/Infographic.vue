@@ -6,9 +6,12 @@
     <SubnationalSustainabilityInfographic></SubnationalSustainabilityInfographic>
     <div class="flex flex-col gap-4 md:flex-row justify-around items-center mt-4 md:mt-0" v-if="selectedYear">
         <InfographicTextBox>
-            <InfographicLegend></InfographicLegend>
+            <InfographicLegend />
         </InfographicTextBox>
         <InfographicTextBox v-html="content.br"></InfographicTextBox>
+    </div>
+    <div v-if="selectedYear">
+        <InfographicFiscalGap />
     </div>
 </template>
 <script>
@@ -18,11 +21,13 @@ import SubnationalSustainabilityInfographic from './SubnationalSustainabilityInf
 import { mapState } from 'pinia'
 import store from "../../Store.js"
 import { Remarkable } from 'remarkable';
+import InfographicFiscalGap from './InfographicFiscalGap.vue';
 export default {
     components: {
         InfographicTextBox,
         SubnationalSustainabilityInfographic,
-        InfographicLegend
+        InfographicLegend,
+        InfographicFiscalGap
     },
     computed: {
         ...mapState(store, ['language', 'strings', 'selectedYear']),

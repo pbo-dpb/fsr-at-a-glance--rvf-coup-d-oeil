@@ -7,12 +7,21 @@ export default class Year {
         this.infographic_subsus_tr = payload.infographic_subsus_tr;
         this.infographic_subsus_br = payload.infographic_subsus_br;
 
-
         this.infographic_subsus_legend_fg_title = payload.infographic_subsus_legend_fg_title
         this.infographic_subsus_legend_fg_range_sunny = payload.infographic_subsus_legend_fg_range_sunny
         this.infographic_subsus_legend_fg_range_cloudy = payload.infographic_subsus_legend_fg_range_cloudy
         this.infographic_subsus_legend_fg_range_partly = payload.infographic_subsus_legend_fg_range_partly
 
+        this.infographic_lt_perspective_fed_is_sustainable = payload.infographic_lt_perspective_fed_is_sustainable
+        this.infographic_lt_perspective_fed_legend = payload.infographic_lt_perspective_fed_legend;
+        this.infographic_lt_perspective_ppp_is_sustainable = payload.infographic_lt_perspective_ppp_is_sustainable;
+        this.infographic_lt_perspective_ppp_legend = payload.infographic_lt_perspective_ppp_legend;
+        this.infographic_lt_perspective_sub_is_sustainable = payload.infographic_lt_perspective_sub_is_sustainable;
+        this.infographic_lt_perspective_sub_legend = payload.infographic_lt_perspective_sub_legend;
+
+        this.infographic_fg_definition = payload.infographic_fg_definition;
+        this.infographic_fg_pos_definition = payload.infographic_fg_pos_definition;
+        this.infographic_fg_neg_definition = payload.infographic_fg_neg_definition;
 
         this.population_growth = payload?.population_growth
         this.senior_dependency_ratio = payload?.senior_dependency_ratio

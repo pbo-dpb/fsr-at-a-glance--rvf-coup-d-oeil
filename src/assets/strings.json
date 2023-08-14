@@ -107,8 +107,24 @@
         "en": "Net debt",
         "fr": "Dette nette"
     },
+    "infographic_subsus_title": {
+        "en": "Sustainability by subnational government",
+        "fr": "Viabilité de chacune des administrations infranationales"
+    },
     "infographic_subsus_legend_true": {
         "en": "Sustainable",
         "fr": "Viable"
+    },
+    "infographic_fg_title": {
+        "en": "Fiscal gap",
+        "fr": "Écart financier"
+    },
+    "infographic_fg_pos_title": {
+        "en": "**Positive** fiscal gap",
+        "fr": "Écart financier **positif**"
+    },
+    "infographic_fg_neg_title": {
+        "en": "**Negative** fiscal gap",
+        "fr": "Écart financier **négatif**"
     }
 }
