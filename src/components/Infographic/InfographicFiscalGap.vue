@@ -1,5 +1,5 @@
 <template>
-    <div class="grid grid-cols-3 gap-16 bg-dodger-blue-800 rounded text-white  p-4 my-4">
+    <div class="flex flex-col lg:grid grid-cols-3 gap-4 lg:gap-16 bg-dodger-blue-800 rounded text-white  p-4 my-4">
         <div class="flex flex-col gap-2">
             <div class="text-2xl font-thin">{{ strings.infographic_fg_title }}</div>
             <div class="prose prose-invert text-sm" v-html="content.fg_def"></div>

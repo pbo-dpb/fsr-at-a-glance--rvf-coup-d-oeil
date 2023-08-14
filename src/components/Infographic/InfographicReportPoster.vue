@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col items-center p-4 gap-2 text-white bg-mulberry-600 rounded text-center">
+    <div class="flex flex-col items-center p-4 gap-2 w-full text-white bg-mulberry-600 rounded text-center">
         <img :src="selectedYear.fsr_poster_url?.[language]" alt="" aria-hidden="true" class="h-32 shadow" loading="lazy">
         <p class="font-semibold leading-snug">
             {{ strings.report_poster_blurb }}
