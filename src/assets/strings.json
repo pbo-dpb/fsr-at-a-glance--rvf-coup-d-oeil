@@ -150,5 +150,13 @@
     "infographic_lt_sub_title": {
         "en": "Subnational government",
         "fr": "Administration infranationale"
+    },
+    "report_poster_blurb": {
+        "en": "To learn more, read the PBO's Fiscal Sustainability Report.",
+        "fr": "Pour en savoir plus, consultez le rapport sur la viabilité financière du DPB."
+    },
+    "report_poster_cta": {
+        "en": "Read the report",
+        "fr": "Lire le rapport"
     }
 }

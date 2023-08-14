@@ -27,11 +27,8 @@
         <div class="col-span-2">
             <InfographicLongTerm />
         </div>
-        <div class="flex flex-col items-center gap-2">
-            <img
-                src="https://distribution-i696d61676573.pbo-dpb.ca/7b71afd96030c5a71fa6885b69081feae0cff58126658e6b4b95accc98f0b0b3">[REPORT
-            COVER + LINK]
-        </div>
+
+        <InfographicReportPoster />
     </div>
     <div v-if="selectedYear">
         <InfographicFiscalGap />
@@ -40,6 +37,7 @@
 <script>
 import InfographicTextBox from './InfographicTextBox.vue';
 import InfographicLegend from "./InfographicLegend.vue"
+import InfographicReportPoster from "./InfographicReportPoster.vue"
 import SubnationalSustainabilityInfographic from './SubnationalSustainabilityInfographic.vue';
 import { mapState } from 'pinia'
 import store from "../../Store.js"
@@ -52,7 +50,8 @@ export default {
         SubnationalSustainabilityInfographic,
         InfographicLegend,
         InfographicFiscalGap,
-        InfographicLongTerm
+        InfographicLongTerm,
+        InfographicReportPoster
     },
     computed: {
         ...mapState(store, ['language', 'strings', 'selectedYear']),

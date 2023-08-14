@@ -6,7 +6,8 @@
       <legend class="w-1/3"><a :href="Object.values(yearSpreadsheetUrls).slice(-1)">XLSX</a> overwrite<br><input
           type="file" name="file" @change="handleDebugFile" ref="debugFileInput" /></legend>
 
-      <button @click="language = language == 'en' ? 'fr' : 'en'" class="w-12 border border-gray-800 p-2">{{ language ==
+      <button @click="language = language == 'en' ? 'fr' : 'en'" class="w-12 border border-gray-800 p-2 rounded">{{
+        language ==
         'en'
         ? 'fr' : 'en' }}</button>
     </div>

@@ -2,7 +2,8 @@ export default class Year {
     constructor(payload) {
         this.indicators_headers = payload.indicators_headers;
         this.fsr_year = payload.fsr_year;
-        this.fsr_report_id = payload.fsr_report_id;
+        this.fsr_url = payload.fsr_url;
+        this.fsr_poster_url = payload.fsr_poster_url;
         this.fsr_intro = payload.fsr_intro;
         this.infographic_subsus_tl = payload.infographic_subsus_tl;
         this.infographic_subsus_tr = payload.infographic_subsus_tr;
