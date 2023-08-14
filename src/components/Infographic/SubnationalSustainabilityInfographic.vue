@@ -1,5 +1,6 @@
 <template>
     <figure class="lg:w-2/3 mx-auto relative @container/map">
+
         <div class="" ref="infographic">
         </div>
         <div v-for="region in regions" style="

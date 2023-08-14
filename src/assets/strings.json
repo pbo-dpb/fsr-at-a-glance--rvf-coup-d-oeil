@@ -3,10 +3,6 @@
         "en": "At a glance",
         "fr": "En un coup d'oeil"
     },
-    "intro": {
-        "en": "The OPBO has prepared fact sheets for the provinces and territories. Yada yada yada lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        "fr": "Le BDPB a préparé des fiches d'informations pour les provinces et les territoires. Yada yada yada lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-    },
     "splash_cta": {
         "en": "Select a province or the territories to view the fact sheet.",
         "fr": "Choisissez une province ou les territoires pour afficher la fiche informative."
@@ -138,5 +134,21 @@
     "infographic_fg_neg_title": {
         "en": "**Negative** fiscal gap",
         "fr": "Écart financier **négatif**"
+    },
+    "infographic_lt_title": {
+        "en": "Long-term outlook",
+        "fr": "Perspectives à long terme"
+    },
+    "infographic_lt_fed_title": {
+        "en": "Federal government",
+        "fr": "Gouvernement fédéral"
+    },
+    "infographic_lt_ppp_title": {
+        "en": "Public pension plans",
+        "fr": "Régimes de retraite généraux"
+    },
+    "infographic_lt_sub_title": {
+        "en": "Subnational government",
+        "fr": "Administration infranationale"
     }
 }

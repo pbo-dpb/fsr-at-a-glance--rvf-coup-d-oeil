@@ -11,7 +11,7 @@
         <div class="text-sm font-semibold">{{ strings.infographic_legend }}</div>
     </div>
 
-
+    <div class="mb-4 text-2xl font-thin text-center">{{ strings.infographic_subsus_title }}</div>
     <div class="flex flex-col gap-4 md:flex-row justify-around items-center mb-4 md:-mb-16" v-if="selectedYear">
         <InfographicTextBox v-html="content.tl"></InfographicTextBox>
         <InfographicTextBox v-html="content.tr"></InfographicTextBox>
@@ -22,6 +22,16 @@
             <InfographicLegend />
         </InfographicTextBox>
         <InfographicTextBox v-html="content.br"></InfographicTextBox>
+    </div>
+    <div v-if="selectedYear" class="lg:grid grid-cols-3 flex flex-col gap-4 items-center">
+        <div class="col-span-2">
+            <InfographicLongTerm />
+        </div>
+        <div class="flex flex-col items-center gap-2">
+            <img
+                src="https://distribution-i696d61676573.pbo-dpb.ca/7b71afd96030c5a71fa6885b69081feae0cff58126658e6b4b95accc98f0b0b3">[REPORT
+            COVER + LINK]
+        </div>
     </div>
     <div v-if="selectedYear">
         <InfographicFiscalGap />
@@ -35,12 +45,14 @@ import { mapState } from 'pinia'
 import store from "../../Store.js"
 import { Remarkable } from 'remarkable';
 import InfographicFiscalGap from './InfographicFiscalGap.vue';
+import InfographicLongTerm from './InfographicLongTerm.vue';
 export default {
     components: {
         InfographicTextBox,
         SubnationalSustainabilityInfographic,
         InfographicLegend,
-        InfographicFiscalGap
+        InfographicFiscalGap,
+        InfographicLongTerm
     },
     computed: {
         ...mapState(store, ['language', 'strings', 'selectedYear']),

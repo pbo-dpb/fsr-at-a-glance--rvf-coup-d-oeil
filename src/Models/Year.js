@@ -3,6 +3,7 @@ export default class Year {
         this.indicators_headers = payload.indicators_headers;
         this.fsr_year = payload.fsr_year;
         this.fsr_url = payload.fsr_url;
+        this.fsr_intro = payload.fsr_intro;
         this.infographic_subsus_tl = payload.infographic_subsus_tl;
         this.infographic_subsus_tr = payload.infographic_subsus_tr;
         this.infographic_subsus_br = payload.infographic_subsus_br;
