@@ -10,7 +10,7 @@ export default {
 
         for (const [key, values] of Object.entries(this.datatable)) {
 
-            let header = h("th", { 'scope': 'row', class: 'border border-gray-300 min-w-[5rem] text-center' }, key);
+            let header = h("th", { 'scope': 'row', class: 'border border-gray-300 min-w-[15rem] text-center' }, key);
             let columns = values.map((value) => {
                 if (rows.length === 0) {
                     return h("th", { 'scope': 'col', 'class': 'min-w-[5rem] border border-gray-300 text-center tabular-nums' }, value)
@@ -25,6 +25,6 @@ export default {
         }
 
 
-        return h('table', { class: ' table-fixed my-4' }, rows)
+        return h('table', { class: ' table-fixed my-4 border border-gray-300 mr-1' }, rows)
     }
 }
