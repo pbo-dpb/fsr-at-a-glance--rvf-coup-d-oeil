@@ -1,5 +1,8 @@
 <template>
   <BarChart :chartData="chartData" :options="options" />
+  <Details :label="strings.alt_version_handle" class="mt-2">
+    <RegionChartAltTable :datatable="datatable" />
+  </Details>
 </template>
 
 <script >
@@ -10,11 +13,13 @@ import { BarChart } from 'vue-chart-3';
 import { Chart, registerables } from "chart.js";
 import Region from '../Models/Region';
 import Localizer from "../Localizer"
+import Details from '../components/Details'
+import RegionChartAltTable from '../components/RegionChartAltTable'
 
 Chart.register(...registerables);
 
 export default defineComponent({
-  components: { BarChart },
+  components: { BarChart, Details, RegionChartAltTable },
   props: {
     region: { type: Region, required: true },
   },
@@ -73,6 +78,13 @@ export default defineComponent({
           },
         ],
       }
+    },
+    datatable() {
+      let table = {};
+      table[this.strings.year_label] = this.chartData.labels;
+      table[this.strings.percentage_of_gdp_axis_label] = this.chartData.datasets[0].data.map(num => num.toLocaleString(this.language));
+
+      return table;
     }
   }
 });

@@ -158,5 +158,13 @@
     "report_poster_cta": {
         "en": "Read the report",
         "fr": "Lire le rapport"
+    },
+    "alt_version_handle": {
+        "en": "Text version",
+        "fr": "Version textuelle"
+    },
+    "year_label": {
+        "en": "Year",
+        "fr": "Année"
     }
 }
