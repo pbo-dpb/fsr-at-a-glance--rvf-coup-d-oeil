@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col items-center p-4 gap-2 w-full  text-center">
+    <div class="flex flex-col items-center p-4 gap-2 w-full border-t border-gray-300 pt-8 mt-4  text-center">
         <a :href="selectedYear.fsr_url[language]"><img :src="selectedYear.fsr_poster_url?.[language]" alt=""
                 aria-hidden="true" class="h-32 shadow border border-blue-100" loading="lazy">
         </a>
@@ -15,7 +15,7 @@
 </template>
 <script>
 import { mapState } from 'pinia'
-import store from "../../Store.js"
+import store from "../Store.js"
 
 export default {
     computed: {

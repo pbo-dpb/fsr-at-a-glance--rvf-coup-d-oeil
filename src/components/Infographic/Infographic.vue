@@ -10,8 +10,10 @@
         </h2>
         <div class="text-sm font-semibold">{{ strings.infographic_legend }}</div>
     </div>
-
-    <div class="mb-4 text-2xl font-thin text-center">{{ strings.infographic_subsus_title }}</div>
+    <div v-if="selectedYear" class="">
+        <InfographicLongTerm />
+    </div>
+    <div class="my-4 text-2xl font-thin text-center">{{ strings.infographic_subsus_title }}</div>
     <div class="flex flex-col gap-4 md:flex-row justify-around items-center mb-4 md:-mb-16" v-if="selectedYear">
         <InfographicTextBox v-html="content.tl"></InfographicTextBox>
         <InfographicTextBox v-html="content.tr"></InfographicTextBox>
@@ -23,13 +25,7 @@
         </InfographicTextBox>
         <InfographicTextBox v-html="content.br"></InfographicTextBox>
     </div>
-    <div v-if="selectedYear" class="lg:grid grid-cols-3 flex flex-col gap-4 items-center">
-        <div class="col-span-2">
-            <InfographicLongTerm />
-        </div>
 
-        <InfographicReportPoster />
-    </div>
     <div v-if="selectedYear">
         <InfographicFiscalGap />
     </div>
@@ -37,7 +33,6 @@
 <script>
 import InfographicTextBox from './InfographicTextBox.vue';
 import InfographicLegend from "./InfographicLegend.vue"
-import InfographicReportPoster from "./InfographicReportPoster.vue"
 import SubnationalSustainabilityInfographic from './SubnationalSustainabilityInfographic.vue';
 import { mapState } from 'pinia'
 import store from "../../Store.js"
@@ -51,7 +46,6 @@ export default {
         InfographicLegend,
         InfographicFiscalGap,
         InfographicLongTerm,
-        InfographicReportPoster
     },
     computed: {
         ...mapState(store, ['language', 'strings', 'selectedYear']),

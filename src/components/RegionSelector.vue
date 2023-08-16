@@ -1,5 +1,5 @@
 <template>
-  <nav class="lg:border-r lg:border-gray-300 lg:pr-2 lg:flex flex-col gap-2">
+  <nav class="lg:border-r lg:border-gray-300 lg:pr-2 lg:flex flex-col gap-2 lg:mb-4">
     <div class="flex flex-row items-center gap-2 uppercase tracking-wide font-semibold justify-between">
       {{ strings.title }}
 
@@ -19,16 +19,21 @@
       <region-selector-item v-for="region in regions" :key="region.id" :region="region"
         @pick="pickRegion(region)"></region-selector-item>
     </ul>
+
+    <InfographicReportPoster v-if="selectedYear" class="hidden lg:flex"></InfographicReportPoster>
   </nav>
 </template>
 <script>
+import InfographicReportPoster from "./InfographicReportPoster.vue"
+
 import RegionSelectorItem from './RegionSelectorItem.vue'
 import { mapWritableState, mapState } from 'pinia'
 import store from "../Store.js"
 
 export default {
   components: {
-    RegionSelectorItem
+    RegionSelectorItem,
+    InfographicReportPoster
   },
   data() {
     return {
