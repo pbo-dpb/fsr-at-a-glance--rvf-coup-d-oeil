@@ -1,5 +1,5 @@
 <template>
-    <div class="prose max-w-none">
+    <div class="prose dark:prose-invert max-w-none">
         <ul>
             <RegionViewBulletsBullet :bullet="bullet" v-for="bullet in region.bullets"></RegionViewBulletsBullet>
         </ul>

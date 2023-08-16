@@ -1,5 +1,5 @@
 <template>
-  <LineChart :chartData="chartData" :options="options" />
+  <LineChart :chartData="chartData" :options="options" class="dark:bg-white dark:p-4 dark:rounded" />
   <Details :label="strings.alt_version_handle" class="mt-2">
     <RegionChartAltTable :datatable="datatable" />
   </Details>

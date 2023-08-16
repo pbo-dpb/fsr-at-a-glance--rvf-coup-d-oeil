@@ -1,7 +1,7 @@
 <template>
     <div class="my-8 flex flex-col gap-2">
         <div
-            class="flex-none max-w-max px-2 py-1 text-sm font-semibold border-l-4 bg-gray-100 border-gray-800 text-gray-800 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-200 text-xs">
+            class="flex-none max-w-max px-2 py-1 text-sm font-semibold border-l-4 bg-gray-100 dark:bg-gray-950 border-gray-800 text-gray-800 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-200 text-xs">
             {{ strings.infographic_type }}
         </div>
         <h2 class="text-4xl font-thin">

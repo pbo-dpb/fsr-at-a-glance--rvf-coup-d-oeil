@@ -14,11 +14,12 @@
             class="shadow-xl ring-offset-2 hover:ring-2 ring-blue-800 cursor-pointer flex flex-col gap-1 items-center p-1 scale-75 @xl/map:scale-100"
             @mouseover="highlightRegion(region)" @mouseleave="highlightRegion(null)" @click="selectedRegion = region">
 
-            <div class="overflow-hidden whitespace-nowrap text-lg font-semibold text-center text-blue-800">{{ region.id
-                ===
-                'territories'
-                ? 'Terr.' :
-                region.id.toUpperCase() }}</div>
+            <div class="overflow-hidden whitespace-nowrap text-lg font-semibold text-center text-blue-800">
+                {{ region.id
+                    ===
+                    'territories'
+                    ? 'Terr.' :
+                    region.id.toUpperCase() }}</div>
             <img v-if="region.is_sustainable" :src="sustainabilityGlyphTrue" class="w-6 h-6">
             <img v-if="region.is_sustainable === false" :src="sustainabilityGlyphFalse" class="w-6 h-6">
             <img v-if="region.is_sustainable === null" :src="sustainabilityGlyphNull" class="w-6 h-6">

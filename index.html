@@ -9,17 +9,57 @@
   <title>PBO Tool</title>
 </head>
 
-<body class="bg-gray-100">
+<body class="bg-gray-100 dark:bg-gray-950 dark:bg-black dark:text-white dark:text-black">
+  <main
+    class="bg-white dark:bg-gray-950 container mt-8 p-8 border border-t border-gray-100 mx-auto flex flex-col gap-4">
 
-  <main class=" container mt-8 px-4 border border-t border-gray-100 mx-auto">
+    <nav class="flex flex-row gap-2">
+      <a href="#">🏠</a>
+      <ul id="wrapper-page-breadcrumbs" class="flex flex-row gap-2"></ul>
+    </nav>
 
-    <div class="col-span-5 bg-white p-4 ">
-      <pbotool-fsr debug="true"></pbotool-fsr>
-    </div>
+    <h1 class="leading-none font-thin mb-4 text-4xl" id="wrapper-page-title"></h1>
 
+
+    <pbotool-fsr debug="true"></pbotool-fsr>
 
   </main>
+  <script>
+    document.addEventListener('navigation-context-update', (e) => {
 
+      // Update the page title
+      if (e.detail.pageTitle) {
+        document.getElementById('wrapper-page-title').innerText = e.detail.pageTitle;
+      }
+
+      if (e.detail.breadcrumbStack) {
+
+        // Empty the breadcrumb stack
+        document.getElementById("wrapper-page-breadcrumbs").innerHTML = "";
+
+        e.detail.breadcrumbStack.forEach(element => {
+          let elLi = document.createElement('li');
+          if (element.url) {
+            let elLiUrl = document.createElement('a');
+            elLiUrl.setAttribute('href', element.url);
+            elLiUrl.innerText = element.name;
+            elLi.appendChild(elLiUrl);
+          } else {
+            elLi.innerText = element.name;
+          }
+
+          document.getElementById("wrapper-page-breadcrumbs").appendChild(elLi);
+        });
+
+
+      }
+
+
+
+
+
+    });
+  </script>
   <script type="module" src="/src/main.js"></script>
 </body>
 
