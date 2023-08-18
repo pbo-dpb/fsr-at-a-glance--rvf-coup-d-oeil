@@ -17,7 +17,7 @@
   <div v-else>
 
     <div v-if="selectedYear" class="border-b border-gray-300 pb-4 mb-4 text-lg prose max-w-none">
-      <p class="leading-snug max-w-none">{{ selectedYear.fsr_intro[language] }}</p>
+      <p class=" max-w-none">{{ selectedYear.fsr_intro[language] }}</p>
     </div>
     <div class="lg:grid grid-cols-4 gap-4">
 
