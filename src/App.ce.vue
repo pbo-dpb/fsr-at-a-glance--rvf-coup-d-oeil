@@ -14,24 +14,31 @@
   </section>
 
   <LoadingIndicator v-if="!latestFsrYear" class="h-8 w-8"></LoadingIndicator>
-  <aside v-else class="lg:grid grid-cols-4 gap-4">
+  <div v-else>
 
-    <div>
+    <div v-if="selectedYear" class="border-b border-gray-300 pb-4 mb-4 text-lg prose max-w-none">
+      <p class="leading-snug max-w-none">{{ selectedYear.fsr_intro[language] }}</p>
+    </div>
+    <div class="lg:grid grid-cols-4 gap-4">
+
       <RegionSelector v-if="selectedYear"></RegionSelector>
-    </div>
-    <div class="col-span-3 pt-4 lg:pt-0">
 
-      <RegionView v-if="selectedRegion" :region="selectedRegion" />
-      <SplashScreen v-show="!selectedRegion"></SplashScreen>
+      <div class="col-span-3 pt-4 lg:pt-0">
+
+        <RegionView v-if="selectedRegion" :region="selectedRegion" />
+        <SplashScreen v-show="!selectedRegion"></SplashScreen>
+      </div>
     </div>
 
-  </aside>
+
+  </div>
 </template>
 
 <script>
 import RegionSelector from './components/RegionSelector.vue';
 import SplashScreen from "./components/SplashScreen.vue";
 import RegionView from "./components/RegionView.vue";
+import WrapperEventDispatcher from "./WrapperEventDispatcher.js"
 
 const yearSpreadsheetUrls = import.meta.glob('./assets/years/*.xlsx', { as: 'url', eager: true })
 import store from "./Store.js"
@@ -61,6 +68,11 @@ export default {
       return this.$root.debug;
     }
   },
+  watch: {
+    "strings.title": function () {
+      this.updatePageTitle()
+    }
+  },
   mounted() {
 
     Promise.all(
@@ -78,7 +90,7 @@ export default {
           this.selectedFsrYear = this.latestFsrYear;
       });
 
-
+    this.updatePageTitle();
   },
   methods: {
     handleDebugFile(e) {
@@ -86,6 +98,10 @@ export default {
       this.selectedFsrYear = this.latestFsrYear;
       this.$refs.debugFileInput.value = null;
       this.selectedRegion = null
+    },
+    updatePageTitle() {
+      if (!this.strings) return;
+      (new WrapperEventDispatcher(this.strings.title, null)).dispatch();
     }
   },
 };

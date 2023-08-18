@@ -27,7 +27,7 @@ export default {
         ...mapState(store, ['language']),
 
         renderedBullet() {
-            return marked.parse(this.bullet[this.language])
+            return marked.parse(this.bullet[this.language] ? this.bullet[this.language] : '')
         }
     },
     watch: {

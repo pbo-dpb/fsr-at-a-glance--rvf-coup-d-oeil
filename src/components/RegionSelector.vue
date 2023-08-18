@@ -1,18 +1,15 @@
 <template>
   <nav class="lg:border-r lg:border-gray-300 lg:pr-2 lg:flex flex-col gap-2 lg:mb-4">
-    <div class="flex flex-row items-center gap-2 uppercase tracking-wide font-semibold justify-between">
-      {{ strings.title }}
 
+    <button @click="expanded = !expanded" class="lg:hidden text-blue-600 underline w-2/3 text-xs text-right">
+      <span v-if="!selectedRegion && !expanded">
+        {{ strings.expand_toggle_prompt }}
+      </span>
+      <span v-if="selectedRegion && !expanded">
+        {{ selectedRegion.name[language] }}
+      </span>
+    </button>
 
-      <button @click="expanded = !expanded" class="lg:hidden text-blue-600 underline w-2/3 text-xs text-right">
-        <span v-if="!selectedRegion && !expanded">
-          {{ strings.expand_toggle_prompt }}
-        </span>
-        <span v-if="selectedRegion && !expanded">
-          {{ selectedRegion.name[language] }}
-        </span>
-      </button>
-    </div>
     <ul :class="{ 'hidden': !expanded }" class='lg:block'>
       <region-selector-item :region="null" @pick="pickRegion(null)"></region-selector-item>
       <hr class="mb-4 mt-4">
