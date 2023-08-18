@@ -1,5 +1,5 @@
 <template>
-  <BarChart :chartData="chartData" :options="options" class="dark:bg-white dark:p-4 dark:rounded" />
+  <BarChart :chartData="chartData" :options="options" class="dark:bg-white dark:p-4 dark:rounded h-96" />
   <Details :label="strings.alt_version_handle" class="mt-2">
     <RegionChartAltTable :datatable="datatable" />
   </Details>
@@ -28,6 +28,7 @@ export default defineComponent({
     ...mapState(store, ['language', 'strings', 'selectedYear']),
     options() {
       return {
+        maintainAspectRatio: false,
         responsive: true,
         aspectRatio: 3,
         plugins: {
