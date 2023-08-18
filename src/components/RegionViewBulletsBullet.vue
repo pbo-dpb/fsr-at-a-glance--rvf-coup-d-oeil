@@ -32,12 +32,22 @@ export default {
     },
     watch: {
         "renderedBullet": function () {
-            this.updateTooltips();
+            this.parseTooltips();
         }
     },
     methods: {
-        updateTooltips() {
+        parseTooltips() {
+            this.$nextTick(() => {
+                this.$refs.bullet.querySelectorAll('.__tooltip').forEach((tooltipEl) => {
 
+                    let describedByEl = this.$refs.bullet.querySelector(`#${tooltipEl.getAttribute("aria-describedby")}`);
+                    if (!describedByEl) return;
+                    tippy(tooltipEl, {
+                        content: describedByEl.innerText,
+                    });
+
+                })
+            })
         }
     },
     created() {
@@ -77,15 +87,7 @@ export default {
 
     },
     mounted() {
-        this.$refs.bullet.querySelectorAll('.__tooltip').forEach((tooltipEl) => {
-            this.$nextTick(() => {
-                let describedByEl = this.$refs.bullet.querySelector(`#${tooltipEl.getAttribute("aria-describedby")}`);
-                if (!describedByEl) return;
-                tippy(tooltipEl, {
-                    content: describedByEl.innerText,
-                });
-            })
-        })
+        this.parseTooltips();
 
     }
 }
