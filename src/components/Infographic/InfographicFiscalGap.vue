@@ -21,7 +21,7 @@
     </div>
 </template>
 <script>
-import { Remarkable } from 'remarkable';
+import { marked } from 'marked';
 import { mapState } from 'pinia'
 import store from "../../Store.js"
 
@@ -38,13 +38,12 @@ export default {
     computed: {
         ...mapState(store, ['language', 'strings', 'selectedYear']),
         content() {
-            var md = new Remarkable();
             return {
-                fg_def: md.render(this.selectedYear.infographic_fg_definition?.[this.language] ?? ""),
-                fg_pos_def: md.render(this.selectedYear.infographic_fg_pos_definition?.[this.language] ?? ""),
-                fg_neg_def: md.render(this.selectedYear.infographic_fg_neg_definition?.[this.language] ?? ""),
-                infographic_fg_neg_title: md.renderInline(this.strings.infographic_fg_neg_title),
-                infographic_fg_pos_title: md.renderInline(this.strings.infographic_fg_pos_title)
+                fg_def: marked.parse(this.selectedYear.infographic_fg_definition?.[this.language] ?? ""),
+                fg_pos_def: marked.parse(this.selectedYear.infographic_fg_pos_definition?.[this.language] ?? ""),
+                fg_neg_def: marked.parse(this.selectedYear.infographic_fg_neg_definition?.[this.language] ?? ""),
+                infographic_fg_neg_title: marked.parseInline(this.strings.infographic_fg_neg_title),
+                infographic_fg_pos_title: marked.parseInline(this.strings.infographic_fg_pos_title)
             }
         }
     }

@@ -5,19 +5,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'mulberry': {
-          DEFAULT: '#C85C7A',
-          50: '#F6E5EA',
-          100: '#F1D6DE',
-          200: '#E7B8C5',
-          300: '#DD99AC',
-          400: '#D27B93',
-          500: '#C85C7A',
-          600: '#B03C5C',
-          700: '#862D46',
-          800: '#5C1F30',
-          900: '#33111A',
-          950: '#1E0A0F'
+        'blush': {
+          DEFAULT: '#C95C7A',
         },
         'dodger-blue': {
           DEFAULT: '#369EFF',

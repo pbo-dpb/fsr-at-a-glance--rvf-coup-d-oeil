@@ -36,7 +36,7 @@ import InfographicLegend from "./InfographicLegend.vue"
 import SubnationalSustainabilityInfographic from './SubnationalSustainabilityInfographic.vue';
 import { mapState } from 'pinia'
 import store from "../../Store.js"
-import { Remarkable } from 'remarkable';
+import { marked } from 'marked';
 import InfographicFiscalGap from './InfographicFiscalGap.vue';
 import InfographicLongTerm from './InfographicLongTerm.vue';
 export default {
@@ -50,11 +50,10 @@ export default {
     computed: {
         ...mapState(store, ['language', 'strings', 'selectedYear']),
         content() {
-            var md = new Remarkable();
             return {
-                tl: md.render(this.selectedYear.infographic_subsus_tl?.[this.language] ?? ""),
-                tr: md.render(this.selectedYear.infographic_subsus_tr?.[this.language] ?? ""),
-                br: md.render(this.selectedYear.infographic_subsus_br?.[this.language] ?? "")
+                tl: marked.parse(this.selectedYear.infographic_subsus_tl?.[this.language] ?? ""),
+                tr: marked.parse(this.selectedYear.infographic_subsus_tr?.[this.language] ?? ""),
+                br: marked.parse(this.selectedYear.infographic_subsus_br?.[this.language] ?? "")
             }
         }
     }

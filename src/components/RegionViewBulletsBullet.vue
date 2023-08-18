@@ -1,25 +1,92 @@
 <template>
-    <li v-html="renderedBullet"></li>
+    <li v-html="renderedBullet" ref="bullet"></li>
 </template>
 <script>
-import { Remarkable } from 'remarkable';
 import store from "../Store.js"
 import { mapState } from 'pinia'
+import { marked } from 'marked';
+import tippy from 'tippy.js';
+import 'tippy.js/dist/tippy.css';
+import { h } from "vue";
 
 export default {
+    data() {
+        return {
+            tooltips: []
+        }
+    },
+
     props: {
         bullet: {
             type: Object,
             required: true
         }
     },
+
     computed: {
         ...mapState(store, ['language']),
 
         renderedBullet() {
-            var md = new Remarkable();
-            return md.render(this.bullet[this.language])
+            return marked.parse(this.bullet[this.language])
         }
+    },
+    watch: {
+        "renderedBullet": function () {
+            this.updateTooltips();
+        }
+    },
+    methods: {
+        updateTooltips() {
+
+        }
+    },
+    created() {
+        /**
+         * Tooltips are supported with the following syntax:
+         * [text anchor for tooltip](## "Content of the tooltip")
+         */
+        marked.use({
+            renderer: {
+                link(href, title, text) {
+                    if (href === null) {
+                        return text;
+                    }
+
+                    if (href == "##" && title) {
+
+                        let tooltipId = `tip_${(Math.random() + 1).toString(36).substring(2)}`;
+                        let out = `<button class='__tooltip underline decoration-dashed decoration-blush underline-offset-2 decoration-2 cursor-pointer' id="${tooltipId}"
+                        aria-describedby="${tooltipId}-tippy"
+                        >${text}</button><span id="${tooltipId}-tippy" class="sr-only" data-tippy-root>${title}</span>`;
+
+
+
+                        return out;
+
+                    }
+
+                    let out = '<a href="' + href + '"';
+                    if (title) {
+                        out += ' title="' + title + '"';
+                    }
+                    out += '>' + text + '</a>';
+                    return out;
+                }
+            }
+        });
+
+    },
+    mounted() {
+        this.$refs.bullet.querySelectorAll('.__tooltip').forEach((tooltipEl) => {
+            this.$nextTick(() => {
+                let describedByEl = this.$refs.bullet.querySelector(`#${tooltipEl.getAttribute("aria-describedby")}`);
+                if (!describedByEl) return;
+                tippy(tooltipEl, {
+                    content: describedByEl.innerText,
+                });
+            })
+        })
+
     }
 }
 </script>

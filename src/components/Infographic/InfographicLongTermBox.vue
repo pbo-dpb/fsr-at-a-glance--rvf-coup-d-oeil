@@ -11,7 +11,7 @@ import sustainabilityGlyphFalse from "../../assets/glyphs/sustainability-glyph-f
 import sustainabilityGlyphNull from "../../assets/glyphs/sustainability-glyph-null.svg?url"
 import sustainabilityGlyphTrue from "../../assets/glyphs/sustainability-glyph-true.svg?url"
 
-import { Remarkable } from 'remarkable';
+import { marked } from 'marked';
 
 export default {
     data() {
@@ -28,8 +28,7 @@ export default {
     },
     computed: {
         contentHtml() {
-            var md = new Remarkable();
-            return md.render(this.content ? this.content : "")
+            return marked.parse(this.content ? this.content : "")
         },
         glyph() {
             if (this.isSustainable) {
