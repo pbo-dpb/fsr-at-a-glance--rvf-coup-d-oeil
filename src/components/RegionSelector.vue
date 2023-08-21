@@ -2,7 +2,7 @@
   <nav class="lg:border-r lg:border-gray-300 lg:flex flex-col gap-2 lg:mb-4">
 
 
-    <ul class='lg:block overflow-x-auto flex lg:overflow-x-hidden gap-4 items-center text-lg'>
+    <ul class='lg:block overflow-x-auto flex lg:overflow-x-hidden gap-4 items-center text-lg lg:text-base'>
       <region-selector-item :region="null" @pick="pickRegion(null)"></region-selector-item>
       <hr class="mb-4 mt-4 hidden lg:block">
       <region-selector-item v-for="region in regions" :key="region.id" :region="region"
