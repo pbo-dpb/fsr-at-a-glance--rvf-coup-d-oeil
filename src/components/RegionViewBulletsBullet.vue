@@ -65,9 +65,9 @@ export default {
                     if (href == "##" && title) {
 
                         let tooltipId = `tip_${(Math.random() + 1).toString(36).substring(2)}`;
-                        let out = `<button class='__tooltip underline decoration-dashed decoration-blush underline-offset-2 decoration-2 cursor-pointer' id="${tooltipId}"
+                        let out = `<span tabindex="0" class='__tooltip underline decoration-dashed decoration-blush underline-offset-2 decoration-2 cursor-pointer' id="${tooltipId}"
                         aria-describedby="${tooltipId}-tippy"
-                        >${text}</button><span id="${tooltipId}-tippy" class="sr-only" data-tippy-root>${title}</span>`;
+                        >${text}</span><span id="${tooltipId}-tippy" class="sr-only" data-tippy-root>${title}</span>`;
 
 
 
