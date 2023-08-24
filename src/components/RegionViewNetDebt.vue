@@ -46,7 +46,7 @@ export default defineComponent({
                   label += ': ';
                 }
                 if (context.parsed.y !== null) {
-                  label += localizer.__('percentage_of_tooltip_label', { percentage: new Intl.NumberFormat(`${this.language}-CA`, { style: 'percent' }).format(context.parsed.y / 100) });
+                  label += localizer.__('percentage_of_tooltip_label', { percentage: new Intl.NumberFormat(`${this.language}-CA`, { style: 'percent', minimumFractionDigits: 1, maximumFractionDigits: 1 }).format(context.parsed.y / 100) });
                 }
                 return label;
               }
@@ -83,7 +83,7 @@ export default defineComponent({
     datatable() {
       let table = {};
       table[this.strings.year_label] = this.chartData.labels;
-      table[this.strings.percentage_of_gdp_axis_label] = this.chartData.datasets[0].data.map(num => num.toLocaleString(this.language));
+      table[this.strings.percentage_of_gdp_axis_label] = this.chartData.datasets[0].data.map(num => num.toLocaleString(this.language, { minimumFractionDigits: 1, maximumFractionDigits: 1 }));
 
       return table;
     }

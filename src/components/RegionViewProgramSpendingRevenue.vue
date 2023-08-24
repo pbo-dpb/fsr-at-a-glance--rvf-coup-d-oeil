@@ -49,7 +49,7 @@ export default defineComponent({
                   label += ': ';
                 }
                 if (context.parsed.y !== null) {
-                  label += localizer.__('percentage_of_tooltip_label', { percentage: new Intl.NumberFormat(`${this.language}-CA`, { style: 'percent' }).format(context.parsed.y / 100) });
+                  label += localizer.__('percentage_of_tooltip_label', { percentage: new Intl.NumberFormat(`${this.language}-CA`, { style: 'percent', minimumFractionDigits: 1, maximumFractionDigits: 1 }).format(context.parsed.y / 100) });
                 }
                 return label;
               }
@@ -103,9 +103,9 @@ export default defineComponent({
       let table = {};
       table[this.strings.year_label] = this.chartData.labels;
       table[`${this.chartData.datasets[0].label
-        } (${this.strings.percentage_of_gdp_axis_label})`] = this.chartData.datasets[0].data.map(num => num.toLocaleString(this.language));
+        } (${this.strings.percentage_of_gdp_axis_label})`] = this.chartData.datasets[0].data.map(num => num.toLocaleString(this.language, { minimumFractionDigits: 1, maximumFractionDigits: 1 }));
       table[`${this.chartData.datasets[1].label
-        } (${this.strings.percentage_of_gdp_axis_label})`] = this.chartData.datasets[1].data.map(num => num.toLocaleString(this.language));
+        } (${this.strings.percentage_of_gdp_axis_label})`] = this.chartData.datasets[1].data.map(num => num.toLocaleString(this.language, { minimumFractionDigits: 1, maximumFractionDigits: 1 }));
 
       return table;
     }
