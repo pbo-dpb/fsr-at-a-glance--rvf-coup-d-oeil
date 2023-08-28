@@ -1,7 +1,7 @@
 <template>
     <figure class="lg:w-2/3 mx-auto relative @container/map">
 
-        <div class="w-full h-fit" ref="infographic">
+        <div class="w-full h-fit dark:opacity-50" ref="infographic">
         </div>
         <div v-for="region in regions" style="
             width: 42px; 
