@@ -4,6 +4,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      spacing: {
+        '128': '32rem',
+      },
       colors: {
         'blush': {
           DEFAULT: '#C95C7A',

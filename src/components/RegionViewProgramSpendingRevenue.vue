@@ -1,5 +1,5 @@
 <template>
-  <LineChart :chartData="chartData" :options="options" class="dark:bg-white dark:p-4 dark:rounded  h-96" />
+  <LineChart :chartData="chartData" :options="options" class="dark:bg-white dark:p-4 dark:rounded  h-128" />
   <Details :label="strings.alt_version_handle" class="mt-2">
     <RegionChartAltTable :datatable="datatable" />
   </Details>
@@ -59,6 +59,8 @@ export default defineComponent({
         scales: {
           y: {
             display: true,
+            suggestedMin: 10,
+            suggestedMax: 70,
             title: {
               display: true,
               text: this.strings.percentage_of_gdp_axis_label,
