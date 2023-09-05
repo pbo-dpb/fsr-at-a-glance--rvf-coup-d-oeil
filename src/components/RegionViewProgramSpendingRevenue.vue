@@ -25,6 +25,20 @@ export default defineComponent({
   },
   computed: {
     ...mapState(store, ['language', 'strings', 'selectedYear']),
+    suggestedMinMax() {
+
+      let allValues = [
+        ...this.region.datasets['program_spending'].values,
+        ...this.region.datasets['revenue'].values
+      ];
+
+
+      return {
+        min: Math.min(...allValues) * 0.8,
+        max: Math.max(...allValues) * 1.2
+      }
+
+    },
     options() {
       return {
         maintainAspectRatio: false,
@@ -59,8 +73,8 @@ export default defineComponent({
         scales: {
           y: {
             display: true,
-            suggestedMin: 10,
-            suggestedMax: 70,
+            suggestedMin: this.suggestedMinMax.min,
+            suggestedMax: this.suggestedMinMax.max,
             title: {
               display: true,
               text: this.strings.percentage_of_gdp_axis_label,
