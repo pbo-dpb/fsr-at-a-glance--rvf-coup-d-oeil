@@ -34,8 +34,8 @@ export default defineComponent({
 
 
       return {
-        min: Math.min(...allValues) * 0.8,
-        max: Math.max(...allValues) * 1.2
+        min: Math.min(...allValues) * 0.9,
+        max: Math.max(...allValues) * 1.1
       }
 
     },
