@@ -10,7 +10,7 @@
   "dependencies": {
     "@tailwindcss/container-queries": "^0.1.1",
     "chart.js": "=> ^3.1.0",
-    "marked": "^8.0.0",
+    "marked": "^9.0.0",
     "pinia": "^2.1.6",
     "read-excel-file": "^5.6.1",
     "tippy.js": "^6.3.7",
@@ -18,7 +18,7 @@
     "vue-chart-3": "^3.1.8"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.9",
+    "@tailwindcss/typography": "^0.5.10",
     "@vitejs/plugin-vue": "^4.3.4",
     "autoprefixer": "^10.4.15",
     "postcss": "^8.4.29",
