@@ -11,6 +11,4 @@ export default class Localizer {
         return s;
     }
 
-
-
 }
