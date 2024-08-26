@@ -8,8 +8,8 @@
 
       <button @click="language = language == 'en' ? 'fr' : 'en'" class="w-12 border border-gray-800 p-2 rounded">{{
         language ==
-        'en'
-        ? 'fr' : 'en' }}</button>
+          'en'
+          ? 'fr' : 'en' }}</button>
     </div>
   </section>
 
@@ -40,7 +40,7 @@ import SplashScreen from "./components/SplashScreen.vue";
 import RegionView from "./components/RegionView.vue";
 import WrapperEventDispatcher from "./WrapperEventDispatcher.js"
 
-const yearSpreadsheetUrls = import.meta.glob('./assets/years/*.xlsx', { as: 'url', eager: true })
+const yearSpreadsheetUrls = import.meta.glob('./assets/years/*.xlsx', { query: '?url', import: 'default', eager: true })
 import store from "./Store.js"
 import { mapWritableState, mapState } from 'pinia'
 
