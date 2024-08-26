@@ -10,8 +10,7 @@
         " :style="{
             top: regionCoords[region.id].y,
             left: regionCoords[region.id].x
-        }"
-            class="shadow-xl ring-offset-2 hover:ring-2 ring-blue-800 cursor-pointer flex flex-col gap-1 items-center p-1 scale-75 @xl/map:scale-100"
+        }" class="shadow-xl ring-offset-2 transition-all hover:ring-2 ring-blue-800 cursor-pointer flex flex-col gap-1 items-center p-1 scale-75 @xl/map:scale-100"
             @mouseover="highlightRegion(region)" @mouseleave="highlightRegion(null)" @click="selectedRegion = region">
 
             <div class="overflow-hidden whitespace-nowrap text-lg font-semibold text-center text-blue-800">
