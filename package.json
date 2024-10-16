@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@tailwindcss/container-queries": "^0.1.1",
-    "chart.js": "^4.4.3",
+    "chart.js": "^3.9.1",
     "marked": "^13.0.1",
     "npm": "^10.8.1",
     "pinia": "^2.1.7",
