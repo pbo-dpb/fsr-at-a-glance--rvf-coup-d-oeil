@@ -1,5 +1,5 @@
 <template>
-  <LineChart :chartData="chartData" :options="options" class="dark:bg-white dark:p-4 dark:rounded  h-128" />
+  <Line :data="chartData" :options="options" class="dark:bg-white dark:p-4 dark:rounded h-128" />
   <Details :label="strings.alt_version_handle" class="mt-2">
     <RegionChartAltTable :datatable="datatable" />
   </Details>
@@ -9,8 +9,10 @@
 import { mapState } from 'pinia'
 import store from "../Store.js"
 import { defineComponent, ref } from 'vue';
-import { LineChart } from 'vue-chart-3';
-import { Chart, registerables } from "chart.js";
+import { Line } from 'vue-chartjs';
+import { Chart, registerables, Title, Tooltip, Legend, LineElement, CategoryScale, LinearScale } from "chart.js";
+Chart.register(Title, Tooltip, Legend, LineElement, CategoryScale, LinearScale);
+
 import Region from '../Models/Region';
 import Localizer from "../Localizer"
 import Details from '../components/Details'
@@ -19,7 +21,7 @@ import RegionChartAltTable from '../components/RegionChartAltTable'
 Chart.register(...registerables);
 
 export default defineComponent({
-  components: { LineChart, Details, RegionChartAltTable },
+  components: { Line, Details, RegionChartAltTable },
   props: {
     region: { type: Region, required: true },
   },
@@ -41,13 +43,6 @@ export default defineComponent({
     },
     options() {
       return {
-        maintainAspectRatio: false,
-        responsive: true,
-        aspectRatio: 3,
-        interaction: {
-          intersect: false
-        },
-        radius: 0,
         plugins: {
           legend: {
             display: true,
@@ -80,7 +75,11 @@ export default defineComponent({
               text: this.strings.percentage_of_gdp_axis_label,
             }
           }
-        }
+        },
+        interaction: {
+          intersect: false
+        },
+
       }
     },
 
@@ -89,6 +88,7 @@ export default defineComponent({
         labels: this.region.datasets['revenue'].range,
         datasets: [
           {
+            pointStyle: false,
             data: this.region.datasets['revenue'].values,
             label: this.strings.revenue_label,
             borderColor: "#2d5071",
@@ -101,6 +101,7 @@ export default defineComponent({
             },
           },
           {
+            pointStyle: false,
             data: this.region.datasets['program_spending'].values,
             label: this.strings.program_spending_label,
             borderColor: "#c85c7a",

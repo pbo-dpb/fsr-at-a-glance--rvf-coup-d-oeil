@@ -1,15 +1,17 @@
 <template>
-  <BarChart :chartData="chartData" :options="options" class="dark:bg-white dark:p-4 dark:rounded h-96" />
+  <Bar :data="chartData" :options="options" class="dark:bg-white dark:p-4 dark:rounded h-96" />
   <Details :label="strings.alt_version_handle" class="mt-2">
     <RegionChartAltTable :datatable="datatable" />
   </Details>
 </template>
 
-<script >
+<script>
 import { mapState } from 'pinia'
 import store from "../Store.js"
 import { defineComponent, ref } from 'vue';
-import { BarChart } from 'vue-chart-3';
+import { Bar } from 'vue-chartjs';
+import { Chart as ChartJS, Title, Tooltip, BarElement, CategoryScale, LinearScale } from 'chart.js'
+ChartJS.register(Title, Tooltip, BarElement, CategoryScale, LinearScale)
 import { Chart, registerables } from "chart.js";
 import Region from '../Models/Region';
 import Localizer from "../Localizer"
@@ -19,7 +21,7 @@ import RegionChartAltTable from '../components/RegionChartAltTable'
 Chart.register(...registerables);
 
 export default defineComponent({
-  components: { BarChart, Details, RegionChartAltTable },
+  components: { Bar, Details, RegionChartAltTable },
   props: {
     region: { type: Region, required: true },
   },
@@ -28,12 +30,9 @@ export default defineComponent({
     ...mapState(store, ['language', 'strings', 'selectedYear']),
     options() {
       return {
-        maintainAspectRatio: false,
-        responsive: true,
-        aspectRatio: 3,
         plugins: {
           legend: {
-            display: false
+            display: false,
           },
           tooltip: {
             callbacks: {
