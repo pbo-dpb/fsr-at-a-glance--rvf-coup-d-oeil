@@ -1,21 +1,57 @@
-@tailwind base;
+@import 'tailwindcss';
 
-h1 {
+@plugin '@tailwindcss/typography';
+@plugin '@tailwindcss/container-queries';
+
+@theme {
+  --color-blush: #c95c7a;
+
+  --color-dodger-blue-50: #eef7ff;
+  --color-dodger-blue-100: #d9edff;
+  --color-dodger-blue-200: #b0d9ff;
+  --color-dodger-blue-300: #88c5ff;
+  --color-dodger-blue-400: #5fb2ff;
+  --color-dodger-blue-500: #369eff;
+  --color-dodger-blue-600: #0083fd;
+  --color-dodger-blue-700: #0066c5;
+  --color-dodger-blue-800: #00498d;
+  --color-dodger-blue-900: #002c55;
+  --color-dodger-blue-950: #001d39;
+  --color-dodger-blue: #369eff;
+}
+
+/*
+  The default border border-solid color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@layer base {
+  h1 {
     @apply text-3xl;
   }
-  
+
   h2 {
     @apply text-2xl;
   }
-  
+
   h3 {
     @apply text-xl;
   }
-  
-  a {
-      @apply text-blue-800 dark:text-blue-200 underline;
-  }
 
-  
-@tailwind components;
-@tailwind utilities;
+  a {
+    @apply text-blue-800 dark:text-blue-200 underline;
+  }
+}

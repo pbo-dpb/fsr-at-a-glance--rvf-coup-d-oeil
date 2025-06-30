@@ -6,7 +6,7 @@
 
 
             <label
-                class="bg-purple-50 text-sm font-semibold border rounded border-purple-800 text-purple-800 px-2 py-1 flex flex-row items-center gap-2 select-none">
+                class="bg-purple-50 text-sm font-semibold border border-solid rounded-sm border-purple-800 text-purple-800 px-2 py-1 flex flex-row items-center gap-2 select-none">
                 <input type="checkbox" :checked="compareWith" @change="setCompareWith(null)"> {{
                     strings.indicators_comparison_toggle }}
             </label>

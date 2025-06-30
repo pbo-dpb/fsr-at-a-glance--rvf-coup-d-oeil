@@ -1,7 +1,7 @@
 <template>
     <div>
 
-        <div class="flex lg:hidden flex-col-reverse lg:flex-col items-center justify-center align-middle gap-4 text-teal-800 dark:text-teal-100 border-2 bg-teal-100 dark:bg-teal-900 border-teal-600 p-4 rounded mb-4"
+        <div class="flex lg:hidden flex-col-reverse lg:flex-col items-center justify-center align-middle gap-4 text-teal-800 dark:text-teal-100 border-2 border-solid bg-teal-100 dark:bg-teal-900 border-teal-600 p-4 rounded-sm mb-4"
             v-if="selectedYear">
 
 

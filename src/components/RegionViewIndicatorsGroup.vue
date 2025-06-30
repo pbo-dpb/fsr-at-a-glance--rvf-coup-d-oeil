@@ -2,14 +2,14 @@
     <figure class="grid gap-4" :class="columnClass">
 
 
-        <div class="hidden lg:block text-sm font-semibold col-start-3 col-span-3 text-center border-b border-gray-300"
+        <div class="hidden lg:block text-sm font-semibold col-start-3 col-span-3 text-center border-b border-solid border-gray-300"
             :aria-hidden="!compareWith" :class="{
                 'opacity-0': !compareWith
             }">
             {{ region.name[language] }}
         </div>
 
-        <div class="hidden lg:block text-sm font-semibold col-span-3 text-center border-b border-purple-700"
+        <div class="hidden lg:block text-sm font-semibold col-span-3 text-center border-b border-solid border-purple-700"
             v-if="compareWith">
             <span v-if="compareWith === selectedYear">{{ strings.indicator_comparison_label_nat_avg }}</span>
             <span v-else>{{ compareWith.name[language] }}</span>

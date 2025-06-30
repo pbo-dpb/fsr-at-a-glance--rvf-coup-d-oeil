@@ -1,6 +1,6 @@
 <template>
     <div
-        class="flex flex-col gap-2 items-center bg-gradient-to-b from-gray-50 to-dodger-blue-50 dark:from-gray-900 dark:to-gray-800 p-4 rounded">
+        class="flex flex-col gap-2 items-center bg-linear-to-b from-gray-50 to-dodger-blue-50 dark:from-gray-900 dark:to-gray-800 p-4 rounded-sm">
         <img :src="glyph" class="w-12 h-12" aria-hidden="true" role="presentation">
         <div class="font-thin text-lg text-center">{{ title }}</div>
         <div class="leading-snug text-sm text-center" v-html="contentHtml"></div>

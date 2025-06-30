@@ -11,7 +11,7 @@
             minimumFractionDigits: 1, maximumFractionDigits: 1
         }).format(column)
         }}</span>
-        <div v-if="compareWith" class="block lg:hidden  tabular-nums rounded  text-purple-800 text-sm bg-purple-50">
+        <div v-if="compareWith" class="block lg:hidden  tabular-nums rounded-sm  text-purple-800 text-sm bg-purple-50">
             {{ new Intl.NumberFormat(`${language}-CA`, {
                 minimumFractionDigits: 1, maximumFractionDigits: 1
             }).format(compareValues[index]) }}

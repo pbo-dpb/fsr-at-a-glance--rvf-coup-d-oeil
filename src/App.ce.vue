@@ -1,15 +1,18 @@
 <template>
-  <section class="font-semibold border border-gray-300 p-4 rounded mb-16 bg-gray-100 dark:bg-gray-950" v-if="debug">
-    <div class="font-mono mb-4 text-gray-800 dark:text-white text-center border-b border-gray-300 pb-2">DEBUG 🔧‍</div>
+  <section class="font-semibold border border-solid border-gray-300 p-4 rounded-sm mb-16 bg-gray-100 dark:bg-gray-950"
+    v-if="debug">
+    <div class="font-mono mb-4 text-gray-800 dark:text-white text-center border-b border-solid border-gray-300 pb-2">
+      DEBUG 🔧‍</div>
     <div class="flex flex-row justify-between">
 
       <legend class="w-1/3"><a :href="Object.values(yearSpreadsheetUrls).slice(-1)">XLSX</a> overwrite<br><input
           type="file" name="file" @change="handleDebugFile" ref="debugFileInput" /></legend>
 
-      <button @click="language = language == 'en' ? 'fr' : 'en'" class="w-12 border border-gray-800 p-2 rounded">{{
-        language ==
-          'en'
-          ? 'fr' : 'en' }}</button>
+      <button @click="language = language == 'en' ? 'fr' : 'en'"
+        class="w-12 border border-solid border-gray-800 p-2 rounded-sm">{{
+          language ==
+            'en'
+            ? 'fr' : 'en' }}</button>
     </div>
   </section>
 
