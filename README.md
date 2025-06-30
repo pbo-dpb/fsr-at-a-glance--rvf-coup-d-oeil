@@ -1,11 +1,33 @@
-# Vue 3 + Vite + Web Components
+# FSR at-a-glance
 
-This template should help get you started developing with Vue 3 in Vite with the intent of building [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components) to embed to the main PBO website. 
+The “At-a-Glance” tool visualizes and summarizes key drivers of fiscal sustainability for each province and territory over the long run from our latest Fiscal Sustainability Report.
 
-This code provides a starting point for the developpment of research tools.
+To run locally, clone the repository and run the following commands:
 
-The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+```bash
+npm install
+npm run dev
+```
 
-## Recommended IDE Setup
+To build the project, run:
 
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
+```bash
+npm run build
+```
+
+# RVF en un coup d'oeil
+
+L’outil « en un coup d’œil » permet de visualiser et de résumer les principaux facteurs de viabilité financière à long terme pour chaque province et territoire, d’après notre dernier rapport sur la viabilité financière.
+
+Pour l’exécuter localement, clonez le dépôt et exécutez les commandes suivantes :
+
+```bash
+npm install
+npm run dev
+```
+
+Pour compiler le projet, exécutez :
+
+```bash
+npm run build
+```
