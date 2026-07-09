@@ -1,7 +1,7 @@
 import Bullet from "./Bullet";
 import Dataset from "./Dataset";
 import Indicators from "./Indicators";
-import blStrings from "../assets/regions.json?json";
+import blStrings from "../assets/regions.json";
 
 export default class Region {
     constructor(payload) {
