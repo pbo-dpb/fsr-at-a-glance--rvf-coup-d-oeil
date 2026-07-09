@@ -1,19 +1,23 @@
 <template>
-    <h1 class="leading-none font-thin ">{{ region.name[language] }}</h1>
+    <h1 class="leading-none font-thin">{{ region.name[language] }}</h1>
 
-    <div class="grid grid-cols-1  pb-4 ">
+    <div class="grid grid-cols-1 pb-4">
         <div class="col-span-2 lg:pr-4">
             <RegionViewBullets :region="region"></RegionViewBullets>
-
         </div>
 
         <div class="flex flex-col gap-4">
             <figure>
-                <h2 class="leading-none font-thin mb-4">{{ strings.program_spending }}</h2>
-                <RegionViewProgramSpendingRevenue :region="region"></RegionViewProgramSpendingRevenue>
+                <h2 class="mb-4 leading-none font-thin">
+                    {{ strings.program_spending }}
+                </h2>
+                <RegionViewProgramSpendingRevenue
+                    :region="region"></RegionViewProgramSpendingRevenue>
             </figure>
             <figure>
-                <h2 class="leading-none font-thin mb-4">{{ strings.net_debt }}</h2>
+                <h2 class="mb-4 leading-none font-thin">
+                    {{ strings.net_debt }}
+                </h2>
                 <RegionViewNetDebt :region="region"></RegionViewNetDebt>
             </figure>
         </div>
@@ -22,32 +26,30 @@
     <RegionViewIndicators :region="region"></RegionViewIndicators>
 </template>
 <script>
-import { mapState } from 'pinia'
-import store from "../Store.js"
-import Region from "../Models/Region";
-import RegionViewBullets from "./RegionViewBullets.vue";
-import RegionViewIndicators from "./RegionViewIndicators.vue"
+    import { mapState } from "pinia";
+    import store from "../Store.js";
+    import Region from "../Models/Region";
+    import RegionViewBullets from "./RegionViewBullets.vue";
+    import RegionViewIndicators from "./RegionViewIndicators.vue";
 
-import RegionViewNetDebt from "./RegionViewNetDebt.vue";
-import RegionViewProgramSpendingRevenue from "./RegionViewProgramSpendingRevenue.vue";
+    import RegionViewNetDebt from "./RegionViewNetDebt.vue";
+    import RegionViewProgramSpendingRevenue from "./RegionViewProgramSpendingRevenue.vue";
 
-export default {
-    props: {
-
-        region: {
-            type: Region,
-            required: true
-        }
-    },
-    computed: {
-        ...mapState(store, ['language', 'strings']),
-    },
-    components: {
-        RegionViewBullets,
-        RegionViewIndicators,
-        RegionViewNetDebt,
-        RegionViewProgramSpendingRevenue,
-
-    }
-}
+    export default {
+        props: {
+            region: {
+                type: Region,
+                required: true,
+            },
+        },
+        computed: {
+            ...mapState(store, ["language", "strings"]),
+        },
+        components: {
+            RegionViewBullets,
+            RegionViewIndicators,
+            RegionViewNetDebt,
+            RegionViewProgramSpendingRevenue,
+        },
+    };
 </script>

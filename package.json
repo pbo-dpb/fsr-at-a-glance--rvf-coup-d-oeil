@@ -1,28 +1,30 @@
 {
-  "name": "pbotool-fsr",
-  "private": true,
-  "version": "0.0.0",
-  "scripts": {
-    "dev": "vite --host --port 8080",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@tailwindcss/container-queries": "^0.1.1",
-    "chart.js": "^4.5.0",
-    "marked": "^16.0.0",
-    "pinia": "^3.0.3",
-    "read-excel-file": "^5.8.5",
-    "tippy.js": "^6.3.7",
-    "vue": "^3.4.38",
-    "vue-chartjs": "^5.3.2"
-  },
-  "devDependencies": {
-    "@tailwindcss/postcss": "^4.1.11",
-    "@tailwindcss/typography": "^0.5.14",
-    "@vitejs/plugin-vue": "^6.0.0",
-    "postcss": "^8.4.41",
-    "tailwindcss": "^4.1.11",
-    "vite": "^7.0.0"
-  }
+    "name": "pbotool-fsr",
+    "private": true,
+    "version": "0.0.0",
+    "scripts": {
+        "dev": "vite --host --port 8080",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "@tailwindcss/container-queries": "^0.1.1",
+        "chart.js": "^4.5.0",
+        "marked": "^16.0.0",
+        "pinia": "^3.0.3",
+        "read-excel-file": "^5.8.5",
+        "tippy.js": "^6.3.7",
+        "vue": "^3.4.38",
+        "vue-chartjs": "^5.3.2"
+    },
+    "devDependencies": {
+        "@tailwindcss/postcss": "^4.1.11",
+        "@tailwindcss/typography": "^0.5.14",
+        "@vitejs/plugin-vue": "^6.0.0",
+        "postcss": "^8.4.41",
+        "prettier": "^3.9.5",
+        "prettier-plugin-tailwindcss": "^0.8.0",
+        "tailwindcss": "^4.1.11",
+        "vite": "^7.0.0"
+    }
 }

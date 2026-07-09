@@ -1,11 +1,10 @@
-import { defineCustomElement, h, createApp, getCurrentInstance } from 'vue'
-import App from "./App.ce.vue"
-import { createPinia } from 'pinia'
+import { defineCustomElement, h, createApp, getCurrentInstance } from "vue";
+import App from "./App.ce.vue";
+import { createPinia } from "pinia";
 const language = document.documentElement.lang;
 
-const pinia = createPinia()
-import stl from './index.css?inline'
-
+const pinia = createPinia();
+import stl from "./index.css?inline";
 
 const defineFsrCustomElement = (component) =>
     defineCustomElement({
@@ -15,15 +14,15 @@ const defineFsrCustomElement = (component) =>
             debug: { type: String, default: false },
         },
         setup() {
-            const app = createApp()
-            app.use(pinia)
-            const inst = getCurrentInstance()
-            Object.assign(inst.appContext, app._context)
-            Object.assign(inst.provides, app._context.provides)
+            const app = createApp();
+            app.use(pinia);
+            const inst = getCurrentInstance();
+            Object.assign(inst.appContext, app._context);
+            Object.assign(inst.provides, app._context.provides);
             return {
-                language
-            }
-        }
-    })
+                language,
+            };
+        },
+    });
 
-customElements.define('pbotool-fsr', defineFsrCustomElement(App))
+customElements.define("pbotool-fsr", defineFsrCustomElement(App));

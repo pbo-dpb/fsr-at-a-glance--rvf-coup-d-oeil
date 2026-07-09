@@ -17,23 +17,34 @@ export default class Indicators {
 
     static initRegionIndicatorsFromRows(region, indicators) {
         let indicators_headers = indicators[0].slice(2);
-        let regionIndicators = indicators.filter(cols => cols[0] === region).reduce((accumulator, item) => {
-            accumulator[item[1]] = item.slice(2);
-            return accumulator;
-        }, {});
+        let regionIndicators = indicators
+            .filter((cols) => cols[0] === region)
+            .reduce((accumulator, item) => {
+                accumulator[item[1]] = item.slice(2);
+                return accumulator;
+            }, {});
 
         return new Indicators({
             indicators_headers,
-            ...regionIndicators
+            ...regionIndicators,
         });
-
     }
-
 
     static structure = {
-        "demographics": ["population_growth", "senior_dependency_ratio"],
-        "economics": ["real_gdp_growth", "employment_growth", "labour_productivity_growth", "nominal_gdp_growth", "effective_interest_rate"],
-        "fiscal": ["revenue", "program_spending", "primary_balance", "debt_interest_charges", "net_debt"]
-    }
-
+        demographics: ["population_growth", "senior_dependency_ratio"],
+        economics: [
+            "real_gdp_growth",
+            "employment_growth",
+            "labour_productivity_growth",
+            "nominal_gdp_growth",
+            "effective_interest_rate",
+        ],
+        fiscal: [
+            "revenue",
+            "program_spending",
+            "primary_balance",
+            "debt_interest_charges",
+            "net_debt",
+        ],
+    };
 }

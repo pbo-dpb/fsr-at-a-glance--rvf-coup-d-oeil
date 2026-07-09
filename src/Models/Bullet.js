@@ -3,5 +3,4 @@ export default class Bullet {
         this.en = payload?.en;
         this.fr = payload?.fr;
     }
-
 }

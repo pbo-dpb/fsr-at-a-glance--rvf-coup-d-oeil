@@ -1,47 +1,52 @@
 <template>
-  <nav class="lg:border-r lg:border-gray-300 lg:flex flex-col gap-2 lg:mb-4">
+    <nav class="flex-col gap-2 lg:mb-4 lg:flex lg:border-r lg:border-gray-300">
+        <ul
+            class="flex items-center gap-4 overflow-x-auto text-lg lg:block lg:overflow-x-hidden lg:text-base">
+            <region-selector-item
+                :region="null"
+                @pick="pickRegion(null)"></region-selector-item>
+            <hr class="mt-4 mb-4 hidden lg:block" />
+            <region-selector-item
+                v-for="region in regions"
+                :key="region.id"
+                :region="region"
+                @pick="pickRegion(region)"></region-selector-item>
+        </ul>
 
-
-    <ul class='lg:block overflow-x-auto flex lg:overflow-x-hidden gap-4 items-center text-lg lg:text-base'>
-      <region-selector-item :region="null" @pick="pickRegion(null)"></region-selector-item>
-      <hr class="mb-4 mt-4 hidden lg:block">
-      <region-selector-item v-for="region in regions" :key="region.id" :region="region"
-        @pick="pickRegion(region)"></region-selector-item>
-    </ul>
-
-    <InfographicReportPoster v-if="selectedYear" class="hidden lg:flex"></InfographicReportPoster>
-  </nav>
+        <InfographicReportPoster
+            v-if="selectedYear"
+            class="hidden lg:flex"></InfographicReportPoster>
+    </nav>
 </template>
 <script>
-import InfographicReportPoster from "./InfographicReportPoster.vue"
+    import InfographicReportPoster from "./InfographicReportPoster.vue";
 
-import RegionSelectorItem from './RegionSelectorItem.vue'
-import { mapWritableState, mapState } from 'pinia'
-import store from "../Store.js"
+    import RegionSelectorItem from "./RegionSelectorItem.vue";
+    import { mapWritableState, mapState } from "pinia";
+    import store from "../Store.js";
 
-export default {
-  components: {
-    RegionSelectorItem,
-    InfographicReportPoster
-  },
-  data() {
-    return {
-      expanded: false,
-    }
-  },
-  computed: {
-    ...mapWritableState(store, ['selectedRegion']),
-    ...mapState(store, ['language', 'strings', 'selectedYear']),
-    regions() {
-
-      return this.selectedYear.regions;
-    }
-  },
-  methods: {
-    pickRegion(region) {
-      this.expanded = false;
-      this.selectedRegion = region;
-    }
-  }
-}
+    export default {
+        components: {
+            RegionSelectorItem,
+            InfographicReportPoster,
+        },
+        data() {
+            return {
+                expanded: false,
+            };
+        },
+        computed: {
+            ...mapWritableState(store, ["selectedRegion"]),
+            ...mapState(store, ["language", "strings", "selectedYear"]),
+            regions() {
+                return this.selectedYear.regions;
+            },
+        },
+        methods: {
+            pickRegion(region) {
+                this.expanded = false;
+                this.selectedRegion = region;
+            },
+        },
+    };
 </script>
