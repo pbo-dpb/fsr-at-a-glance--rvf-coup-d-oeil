@@ -1,7 +1,7 @@
 import { defineStore } from "pinia";
 import Year from "./Models/Year";
-import blStrings from "./assets/strings.json?json";
-import readXlsxFile from "read-excel-file";
+import blStrings from "./assets/strings.json";
+import { readSheet } from "read-excel-file/browser";
 import Region from "./Models/Region";
 import Indicators from "./Models/Indicators";
 
@@ -17,7 +17,7 @@ export default defineStore("fsr", {
             /**
              * Vars
              */
-            let vars = await readXlsxFile(xlsxBytes, { sheet: "VARS" });
+            let vars = await readSheet(xlsxBytes, "VARS");
             vars = vars.reduce((accumulator, item) => {
                 if (item[2]) {
                     accumulator[item[0]] = { en: item[1], fr: item[2] };
@@ -36,9 +36,7 @@ export default defineStore("fsr", {
             /**
              * Indicators
              */
-            let indicators = await readXlsxFile(xlsxBytes, {
-                sheet: "INDICATORS",
-            });
+            let indicators = await readSheet(xlsxBytes, "INDICATORS");
 
             let indicatorsNationalAverage =
                 Indicators.initRegionIndicatorsFromRows("nat_avg", indicators);
@@ -48,11 +46,9 @@ export default defineStore("fsr", {
                 ...indicatorsNationalAverage,
             });
 
-            let sustainability = await readXlsxFile(xlsxBytes, {
-                sheet: "SUSTAINABILITY",
-            });
-            let bullets = await readXlsxFile(xlsxBytes, { sheet: "BULLETS" });
-            let charts = await readXlsxFile(xlsxBytes, { sheet: "CHARTS" });
+            let sustainability = await readSheet(xlsxBytes, "SUSTAINABILITY");
+            let bullets = await readSheet(xlsxBytes, "BULLETS");
+            let charts = await readSheet(xlsxBytes, "CHARTS");
 
             year.regions = Region.buildRegionsFromRows(
                 indicators,
